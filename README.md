@@ -22,6 +22,10 @@ utilize the item amount category to save line space.
 as seen in the above section
 - Created the [github](https://github.com/ashtontheanalyst/IPG-Inventory), configured
 VS Code on RE-3, fresh python install and associated packages... set-up env
+- Created a basic app that brings in the csv file as a dataframe, then displays the item
+names and serial numbers on the home screen in a table
+- The app will show the inventory as a table, can filter it based on items at a location, 
+and then on top of that sort A-Z or Z-A
 
 
 ## Ideas

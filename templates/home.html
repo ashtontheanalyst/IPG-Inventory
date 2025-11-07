@@ -6,7 +6,82 @@
     <title>Home</title>
 </head>
 <body>
-    <h1>Home Page</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, deserunt iure ipsam totam, repellendus facilis illo fugit quaerat reiciendis sed, amet atque suscipit quidem. Doloremque pariatur beatae velit ducimus fuga.</p>
+    <h1>Inventory</h1>
+
+    <!-- Non-functional as of 11/7 current -->
+    <button id="sortLocAZbtn" name="sorter" type="button">Sort Location A-Z</button>
+    <button id="sortLocZAbtn" name="sorter" type="button">Sort Location Z-A</button>
+    <br><br>
+
+    <!-- Radio buttons for location of the item, when selected it will filter the table,
+     default behavior is to show all items. The name option makes only one btn selectable
+     at a time, no multi-select it wouldn't make sense -->
+    <label><input type="radio" name="option" value="ALL" id="ALLbtn" checked>ALL</label>
+    <label><input type="radio" name="option" value="RIC" id="RICbtn">RIC</label>
+    <label><input type="radio" name="option" value="OTA" id="OTAbtn">OTA</label>
+    <label><input type="radio" name="option" value="MCC" id="MCCbtn">MCC</label>
+    <br><br>
+
+
+    <!-- Inventory table -->
+    <div id="invTable">
+        {{ items_html|safe }}
+    </div>
+
+
+
+
+    <script>
+        const invTable = document.getElementById("invTable");
+        const ALLbtn = document.getElementById("ALLbtn");
+        const RICbtn = document.getElementById("RICbtn");
+        const OTAbtn = document.getElementById("OTAbtn");
+        const MCCbtn = document.getElementById("MCCbtn");
+
+        // ------------------------------------------------------------------------------
+        // This function takes the location value passed in, passes it to the backend
+        // and then repopulates the page with a table that has the inventory items
+        // at the passed in location. Also sorts A-Z or Z-A if applicable
+        async function getSortFilter(location, sortDirection) {
+            const params = new URLSearchParams();
+            params.set("location", location);
+            params.set("sortDirection", sortDirection);
+
+            const result = await fetch(`/table?${params.toString()}`);
+            const html = await result.text();
+            invTable.innerHTML = html;
+        }
+        
+
+        // We apply this to all radio buttons in the "option" group
+        document.querySelectorAll('input[name="option"]').forEach(radio => {
+            
+            // When the radio button with location is selected, delete the old table
+            // entirely off the screen/DOM and load in our new table from the backend
+            // function we made
+            radio.addEventListener('click', (btn) => {
+                invTable.innerHTML = "";
+                getSortFilter(btn.target.value, "none");  // We don't sort for this one
+            });
+        });
+
+        // Apply to both sort buttons
+        document.querySelectorAll('button[name="sorter"]').forEach(button => {
+            
+            // We sort the table, at the current location, based on A-Z or Z-A
+            button.addEventListener('click', () => {
+                invTable.innerHTML = "";
+                // This gets the radio btn (location) that's currently checked
+                const location = document.querySelector('input[name="option"]:checked').value;
+
+                if (button.innerHTML == "Sort Location A-Z") {
+                    getSortFilter(location, "A-Z");
+                }
+                else if (button.innerHTML == "Sort Location Z-A") {
+                    getSortFilter(location, "Z-A");
+                }
+            });
+        });
+    </script>
 </body>
 </html>
