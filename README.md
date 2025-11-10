@@ -27,6 +27,12 @@ names and serial numbers on the home screen in a table
 - The app will show the inventory as a table, can filter it based on items at a location, 
 and then on top of that sort A-Z or Z-A
 
+**11/10/25:**
+- Tristan got the app running on python anywhere!
+- Created a scan page that dynamically updates a table on page with scanned items and their
+associated name/serial number. Can add more info if needed.
+- Functionality being built in for 2062 creation and inventory check
+
 
 ## Ideas
 - Convert Ethan's Ruby on Rails application to a Python Flask application

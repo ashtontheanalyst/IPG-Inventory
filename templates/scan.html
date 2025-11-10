@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan Page</title>
+</head>
+<body>
+    <h1>Scan Page</h1>
+    <a href="/">Home</a>
+
+    <!-- This is the input from the scanner, we make it 100% opaque and off the screen hidden -->
+    <input id="scannerInput" type="text" autocomplete="off" autofocus 
+    style="opacity: 0; position: absolute; left: -9999px;">
+
+
+    <table id="scannedTable">
+        <tr>
+            <th>Item Name</th>
+            <th>Serial Number</th>
+        </tr>
+        <!--New rows populate here-->
+    </table>
+
+
+    <!--Make a 2062 with the items or check the inventory buttons-->
+    <button style="background-color: red;">2062</button>
+    <button style="background-color: green;">Inv Check</button>
+
+
+
+
+    <script>
+        const scannerInput = document.getElementById("scannerInput");
+        const scannedTable = document.getElementById("scannedTable");
+        let itemList = [];
+
+
+        // Remember, when the scanner scans something, it acts like a keyboard typing in letters
+        // super fast. So, we pick up that input here
+        scannerInput.addEventListener('keypress', async (event) => {
+            // When the scanner is done scanning, it clicks enter
+            if (event.key === "Enter") {
+                const value = scannerInput.value.trim();
+
+                // Gets the item information, see below
+                const item = await getItemFromScan(value);
+
+                // If there's a scanned item, create a new row with the values
+                const newRow = scannedTable.insertRow(-1);
+                const nameCell = newRow.insertCell(0);
+                nameCell.textContent = item.itemName;
+                const serialCell = newRow.insertCell(1);
+                serialCell.textContent = item.itemSerial;
+
+                // Add the items info to our itemList (for later use with 2062 HR and inv check)
+                itemList.push({name: item.itemName, serial: item.itemSerial})
+                console.log(itemList);
+
+                // Clear the scanner input
+                scannerInput.value = "";
+            }
+        });
+
+
+        // Send the scan val to the backend which will return the item info and then we throw it to the page
+        async function getItemFromScan(scanVal) {
+            const params = new URLSearchParams();
+            params.set("scanVal", scanVal);
+            
+            const result = await fetch(`/getItem?${params.toString()}`);
+            const item = await result.json();
+            return item;    // As of now returns itemName and itemSerial
+        }
+
+
+        // This keeps the input box highlighted and ready to take in input
+        window.addEventListener('click', () => scannerInput.focus());
+    </script>
+</body>
+</html>
