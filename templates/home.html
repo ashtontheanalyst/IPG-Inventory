@@ -13,6 +13,7 @@
     <!-- Non-functional as of 11/7 current -->
     <button id="sortLocAZbtn" name="sorter" type="button">Sort Location A-Z</button>
     <button id="sortLocZAbtn" name="sorter" type="button">Sort Location Z-A</button>
+    <button id="ResetInvBtn" type="button" onclick="resetInvCol()">Reset Inv</button>
     <br><br>
 
     <!-- Radio buttons for location of the item, when selected it will filter the table,
@@ -25,65 +26,170 @@
     <br><br>
 
 
-    <!-- Inventory table -->
-    <div id="invTable">
-        {{ items_html|safe }}
-    </div>
+    <table id="inventory"></table>
+
+    <!-- This is the input from the scanner, we make it 100% opaque and off the screen hidden -->
+    <input id="scannerInput" type="text" autocomplete="off" tabindex="-1" aria-hidden="true"
+    style="opacity: 0; position: fixed; left: -9999px; pointer-events: none;">
 
 
 
 
     <script>
-        const invTable = document.getElementById("invTable");
         const ALLbtn = document.getElementById("ALLbtn");
         const RICbtn = document.getElementById("RICbtn");
         const OTAbtn = document.getElementById("OTAbtn");
         const MCCbtn = document.getElementById("MCCbtn");
 
-        // ------------------------------------------------------------------------------
-        // This function takes the location value passed in, passes it to the backend
-        // and then repopulates the page with a table that has the inventory items
-        // at the passed in location. Also sorts A-Z or Z-A if applicable
-        async function getSortFilter(location, sortDirection) {
-            const params = new URLSearchParams();
-            params.set("location", location);
-            params.set("sortDirection", sortDirection);
+        const inventory = document.getElementById("inventory");
+        const scannerInput = document.getElementById("scannerInput");
 
-            const result = await fetch(`/table?${params.toString()}`);
-            const html = await result.text();
-            invTable.innerHTML = html;
+
+
+
+        // This is what loads on initial visiting the home page, pulls inventory CSV to frontend then passes
+        // it to the build table func
+        async function getTableData() {
+            const response = await fetch(`/getTable`);
+            const data = await response.json();
+
+            // Helper function to build table
+            buildTable(data);
+        }
+
+        // Helper function that builds the table itself with data from backend CSV
+        function buildTable(data) {
+            inventory.innerHTML = "";   // Clear
+
+            // Headers
+            const thead = document.createElement("thead");
+            const hr = document.createElement("tr");
+            ["Item", "Serial", "Code", "Location", "Inventoried?"].forEach((val) => {
+                const th = document.createElement("th");
+                th.textContent = val;
+                hr.appendChild(th);
+            });
+            thead.appendChild(hr);
+            inventory.appendChild(thead);
+            
+
+            // Insert rows of data (items)
+            const tbody = document.createElement("tbody");
+            data.items.forEach((item) => {
+                // This builds each individual row and appends to the body which appends to the table
+                const tr = document.createElement("tr");
+                tr.insertCell(0).textContent = item.name;
+                tr.insertCell(1).textContent = item.serial;
+                tr.insertCell(2).textContent = item.code;
+                tr.insertCell(3).textContent = item.location;
+                tr.insertCell(4).textContent = item.inventoried;
+                tbody.appendChild(tr);
+            });
+            inventory.appendChild(tbody);
         }
         
 
-        // We apply this to all radio buttons in the "option" group
-        document.querySelectorAll('input[name="option"]').forEach(radio => {
-            
-            // When the radio button with location is selected, delete the old table
-            // entirely off the screen/DOM and load in our new table from the backend
-            // function we made
-            radio.addEventListener('click', (btn) => {
-                invTable.innerHTML = "";
-                getSortFilter(btn.target.value, "none");  // We don't sort for this one
-            });
-        });
+
+
+        // Sort the table/items A-Z or Z-A
+        async function sortTable(direction, location) {
+            const response = await fetch(`/sortTable?direction=${direction}&location=${location}`);
+            const data = await response.json();
+            buildTable(data);
+        }
 
         // Apply to both sort buttons
         document.querySelectorAll('button[name="sorter"]').forEach(button => {
-            
-            // We sort the table, at the current location, based on A-Z or Z-A
-            button.addEventListener('click', () => {
-                invTable.innerHTML = "";
-                // This gets the radio btn (location) that's currently checked
-                const location = document.querySelector('input[name="option"]:checked').value;
+            // Based on A-Z or Z-A
+            button.addEventListener('click', (btn) => {
+                let direction = btn.target.innerHTML;
+                let location = document.querySelector('input[name="option"]:checked').value;
 
-                if (button.innerHTML == "Sort Location A-Z") {
-                    getSortFilter(location, "A-Z");
+                if (direction == "Sort Location A-Z") {
+                    sortTable("A", location);
                 }
-                else if (button.innerHTML == "Sort Location Z-A") {
-                    getSortFilter(location, "Z-A");
+                else if (direction == "Sort Location Z-A") {
+                    sortTable("D", location);
                 }
             });
         });
+
+
+
+
+        // Filters the item in the table based on location you specify on btn press
+        async function filterTable(location) {
+            const response = await fetch(`/filterTable?location=${location}`);
+            const data = await response.json();
+            buildTable(data);
+        }
+
+        // Applies to all location radio buttons
+        document.querySelectorAll('input[name="option"]').forEach(radio => {
+            // Call this function when clicked, we want a filtered table
+            radio.addEventListener('click', (btn) => {
+                let location = btn.target.value;
+                filterTable(location);
+            });
+        });
+
+
+
+
+        // Scanning/inventorying functionality
+        async function markPresent(value) {
+            const response = await fetch(`/markPresent?value=${value}`);
+            const data = await response.json();
+            buildTable(data);
+        }
+        
+        // Remember, when the scanner scans something, it acts like a keyboard typing in letters
+        // super fast. So, we pick up that input here
+        scannerInput.addEventListener('keydown', async (event) => {
+            // When the scanner is done scanning, it clicks enter
+            if (event.key === "Enter") {
+                // Mark that the item has been inventoried in the backend csv
+                const value = scannerInput.value.trim();
+                await markPresent(value);
+
+                // Clear the scanner input
+                scannerInput.value = "";
+            }
+        });
+
+
+        // Resets the inventoried column to all "FALSE" values
+        async function resetInvCol() {
+            const response = await fetch(`/resetInvCol`);
+            const data = await response.json();
+            buildTable(data);
+
+            // Since this is a reset, I also select the 'ALL' btn for location
+            ALLbtn.checked = true;
+        }
+
+
+
+
+        // Helper function to bring focus back to the scannerinput
+        function focusScanner() {
+            if (document.activeElement !== scannerInput) {
+                scannerInput.focus();
+            }
+        }
+
+        // Events to fire helper
+        window.addEventListener("load", focusScanner);      // When the page loads
+        window.addEventListener("focus", focusScanner);     // When you come back to the page
+        document.addEventListener("mousedown", () => {      // Mouse click
+            setTimeout(focusScanner, 0);
+        });
+
+
+
+        
+        // Build the table once window loads
+        window.addEventListener("DOMContentLoaded", getTableData)
     </script>
 </body>
 </html>

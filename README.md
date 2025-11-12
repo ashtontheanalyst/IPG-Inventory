@@ -33,8 +33,19 @@ and then on top of that sort A-Z or Z-A
 associated name/serial number. Can add more info if needed.
 - Functionality being built in for 2062 creation and inventory check
 
+**11/12/25:**
+- Main inventory page will now be used to check if an item has been scanned or not. The fix
+was just adding another column with 1 or 0 for if it's been scanned or not.
+- Idea #3 created, working on it
+- Idea #4 created
+- Deleted the scan page, the home page is the main now
+
 
 ## Ideas
-- Convert Ethan's Ruby on Rails application to a Python Flask application
-- Fix the hosting problem by hosting the Flask application on pythonanywhere with a 
+1. Convert Ethan's Ruby on Rails application to a Python Flask application
+2. Fix the hosting problem by hosting the Flask application on pythonanywhere with a 
 username/password
+3. The main inventory page can save a temp csv with all of the items that have been scanned
+so that we can have a button that says 'Build 2062' and then it builds it with the saved list
+4. Set the scanner to bluetooth mode, and make a separate page with the barcodes for configuring
+the scanner/how to use it (help page)

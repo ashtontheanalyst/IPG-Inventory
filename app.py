@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, Response, jsonify
+from flask import Flask, render_template, request, jsonify, redirect
 import pandas as pd
 import csv
 
@@ -11,69 +11,158 @@ data = pd.read_csv('./data/Inventory.csv')
 # df narrowed down to item name, serial, and location
 items = data[['category_name','serial_number', 'location']]
 
+# inventory
+inventory = []
+
 
 
 
 # Home
 @app.route("/")
 def home():
-    # Initially when hitting home page, load in the inventory at all locations
-    items_html = render_table(items)
-    return render_template('home.html', items_html=items_html)
+    return render_template('home.html')
 
 
 
 
-# Route where the front-end requests a new table because a radio btn was pressed with a
-# specific location (filters the table). We also have the sorting logic in here in case
-# one of those btns is pressed
-@app.route("/table")
-def table():
-    location = request.args.get("location")
-    sortDirection = request.args.get("sortDirection")
+@app.route("/getTable")
+def getTable():
+    inventory = []
+    
+    # Pulls the data from the csv file, updates the global inventory array as an array of dicts with each
+    # item row, then sends it to the front end to make it a table
+    with open("./data/Inventory.csv", newline="", encoding="utf-8") as csvfile:
+        csvinv = csv.DictReader(csvfile)
+        for row in csvinv:
+            inventory.append({
+                "name": row["category_name"], 
+                "serial": row["serial_number"],
+                "code": row["object_code"],
+                "location": row["location"],
+                "inventoried": row["inventoried"]
+            })
+
+    return jsonify({"status": "ok", "items": inventory})
+
+
+# Sort the table based on A-Z or Z-A
+@app.route("/sortTable")
+def sortTable():
+    direction = request.args.get("direction")   # Get direction A:ascending or D:decending
+    location = request.args.get("location")     # Pull the location for sorting
+
+    inventory = []  # Clear
 
     if location == "ALL":
-        df = items
+        with open("./data/Inventory.csv", newline="", encoding="utf-8") as csvfile:
+            csvinv = csv.DictReader(csvfile)
+            for row in csvinv:
+                inventory.append({
+                    "name": row["category_name"], 
+                    "serial": row["serial_number"],
+                    "code": row["object_code"],
+                    "location": row["location"],
+                    "inventoried": row["inventoried"]
+                })
     else:
-        df = items[items["location"] == location]
+        with open("./data/Inventory.csv", newline="", encoding="utf-8") as csvfile:
+            csvinv = csv.DictReader(csvfile)
+            for row in csvinv:
+                if row["location"] == location: # This is the line change for location
+                    inventory.append({
+                        "name": row["category_name"], 
+                        "serial": row["serial_number"],
+                        "code": row["object_code"],
+                        "location": row["location"],
+                        "inventoried": row["inventoried"]
+                    })
 
-    if sortDirection == "A-Z":
-        df = df.sort_values(by="category_name", ascending=True, na_position="last")
-    elif sortDirection == "Z-A":
-        df = df.sort_values(by="category_name", ascending=False, na_position="last")
+    if direction == "A":
+        inventory = sorted(inventory, key=lambda x: x["name"])
+    elif direction == "D":
+        inventory = sorted(inventory, key=lambda x: x["name"], reverse=True)
+
+    return jsonify({"status": "ok", "items": inventory})
+
+
+# Filter the table based on location
+@app.route("/filterTable")
+def filterTable():
+    location = request.args.get("location")
+
+    inventory = []  # Clear
+
+    if location != "ALL":
+        with open("./data/Inventory.csv", newline="", encoding="utf-8") as csvfile:
+            csvinv = csv.DictReader(csvfile)
+            for row in csvinv:
+                if row["location"] == location:
+                    inventory.append({
+                        "name": row["category_name"], 
+                        "serial": row["serial_number"],
+                        "code": row["object_code"],
+                        "location": row["location"],
+                        "inventoried": row["inventoried"]
+                    })
+    else:
+        # Default table with items at all locations
+        return redirect("/getTable")
+
+
+    return jsonify({"status": "ok", "items": inventory})
+
+
+
+
+# Marking an item present in the CSV based on scan from frontend
+@app.route("/markPresent")
+def markPresent():
+    inventory = []
+    value = request.args.get("value")
+
+    # Make the CSV a pandas df, update the value that's been scanned in, write it to the CSV
+    df = pd.read_csv("./data/Inventory.csv", dtype=str)
+    df.loc[df["object_code"] == value, "inventoried"] = "TRUE"
+    df.to_csv("./data/Inventory.csv", index=False)
     
-    return Response(render_table(df), mimetype="text/html")
-
-
-# This turns the dataframe passed in to an HTML table to be passed to front-end
-def render_table(df):
-    return df.to_html(index=False, table_id='itemTable', border=1)
-
-
-
-
-# This is the scanner page
-@app.route("/scan")
-def scan():
-    return render_template("scan.html")
-
-
-# This matches the scanned value to the items information
-@app.route("/getItem")
-def getItem():
-    scanVal = request.args.get("scanVal", "").strip()
-    
-    # Find the name of the item in the CSV based on the scanner value from the frontend
+    # Read the newly updated CSV data to be passed to the frontend
     with open("./data/Inventory.csv", newline="", encoding="utf-8") as csvfile:
-        inventory = csv.DictReader(csvfile)
+        csvinv = csv.DictReader(csvfile)
+        for row in csvinv:
+            inventory.append({
+                "name": row["category_name"], 
+                "serial": row["serial_number"],
+                "code": row["object_code"],
+                "location": row["location"],
+                "inventoried": row["inventoried"]
+            })
 
-        for row in inventory:
-            if row["object_code"] == scanVal:
-                # This is where we change what all info we want to pull about the item
-                return jsonify({"status": "ok", "itemName": row["category_name"], "itemSerial": row["serial_number"]})
+    return jsonify({"status": "ok", "items": inventory})
 
-    # If we don't find the item, return this...
-    return jsonify({"status": "ok", "itemName": "Item name not found in DB", "itemSerial": "Item serial # not found in DB"})
+
+# Resets the inventory column to all false values in the CSV
+@app.route("/resetInvCol")
+def resetInvCol():
+    inventory = []
+
+    # Make the CSV a pandas df, update all inventoried cells to FALSE, write it to the CSV
+    df = pd.read_csv("./data/Inventory.csv", dtype=str)
+    df["inventoried"] = "FALSE"
+    df.to_csv("./data/Inventory.csv", index=False)
+    
+    # Read the newly updated CSV data to be passed to the frontend
+    with open("./data/Inventory.csv", newline="", encoding="utf-8") as csvfile:
+        csvinv = csv.DictReader(csvfile)
+        for row in csvinv:
+            inventory.append({
+                "name": row["category_name"], 
+                "serial": row["serial_number"],
+                "code": row["object_code"],
+                "location": row["location"],
+                "inventoried": row["inventoried"]
+            })
+
+    return jsonify({"status": "ok", "items": inventory})
 
 
 
