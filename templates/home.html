@@ -4,33 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="../static/index.css"><!--CSS-->
 </head>
 <body>
-    <h1>Inventory</h1>
-    <a href="/scannerHelp">Scanner Help</a>
-    <br><br>
+    <!--Header-->
+    <div id="headerBar">
+        <h1>IPG Inventory</h1>
 
-    <!-- Non-functional as of 11/7 current -->
-    <button id="sortLocAZbtn" name="sorter" type="button">Sort Location A-Z</button>
-    <button id="sortLocZAbtn" name="sorter" type="button">Sort Location Z-A</button>
-    <button id="ResetInvBtn" type="button" onclick="resetInvCol()">Reset Inv</button>
-    <br><br>
-
-    <!-- Radio buttons for location of the item, when selected it will filter the table,
-     default behavior is to show all items. The name option makes only one btn selectable
-     at a time, no multi-select it wouldn't make sense -->
-    <label><input type="radio" name="option" value="ALL" id="ALLbtn" checked>ALL</label>
-    <label><input type="radio" name="option" value="RIC" id="RICbtn">RIC</label>
-    <label><input type="radio" name="option" value="OTA" id="OTAbtn">OTA</label>
-    <label><input type="radio" name="option" value="MCC" id="MCCbtn">MCC</label>
-    <br><br>
+        <div id="headerBtnCont">
+            <button id="ResetInvBtn" type="button" onclick="resetInvCol()" class="headerBtn">Reset</button>
+            <button type="button" class="headerBtn">*2062*</button>
+            <a href="/scannerHelp" class="headerBtn">Scanner</a>
+            <!--More buttons here-->
+        </div>
+    </div>
 
 
-    <table id="inventory"></table>
+    <div id="main">
+        <div id="optBtnsCont">
+            <!-- Radio buttons for location of the item, when selected it will filter the table,
+            default behavior is to show all items. The name option makes only one btn selectable
+            at a time, no multi-select it wouldn't make sense -->
+            <label class="locBtn"><input type="radio" name="option" value="ALL" id="ALLbtn" checked hidden>ALL</label>
+            <label class="locBtn"><input type="radio" name="option" value="RIC" id="RICbtn" hidden>RIC</label>
+            <label class="locBtn"><input type="radio" name="option" value="OTA" id="OTAbtn" hidden>OTA</label>
+            <label class="locBtn"><input type="radio" name="option" value="MCC" id="MCCbtn" hidden>MCC</label>
+            
+            <button id="sortLocAZbtn" name="sorter" type="button" class="optBtn">A-Z</button>
+            <button id="sortLocZAbtn" name="sorter" type="button" class="optBtn">Z-A</button>
+        </div>
 
-    <!-- This is the input from the scanner, we make it 100% opaque and off the screen hidden -->
-    <input id="scannerInput" type="text" autocomplete="off" tabindex="-1" aria-hidden="true"
-    style="opacity: 0; position: fixed; left: -9999px; pointer-events: none;">
+        
+        <table id="inventory"></table>
+
+
+        <!-- This is the input from the scanner, we make it 100% opaque and off the screen hidden -->
+        <input id="scannerInput" type="text" autocomplete="off" tabindex="-1" aria-hidden="true"
+        style="opacity: 0; position: fixed; left: -9999px; pointer-events: none;">
+    </div>
 
 
 
@@ -105,10 +116,10 @@
                 let direction = btn.target.innerHTML;
                 let location = document.querySelector('input[name="option"]:checked').value;
 
-                if (direction == "Sort Location A-Z") {
+                if (direction == "A-Z") {
                     sortTable("A", location);
                 }
-                else if (direction == "Sort Location Z-A") {
+                else if (direction == "Z-A") {
                     sortTable("D", location);
                 }
             });
@@ -181,7 +192,17 @@
         // Events to fire helper
         window.addEventListener("load", focusScanner);      // When the page loads
         window.addEventListener("focus", focusScanner);     // When you come back to the page
-        document.addEventListener("mousedown", () => {      // Mouse click
+        document.addEventListener("mousedown", (e) => {      // Mouse click
+            // This makes sure we can interact with say a button and not get interrupted
+            if (e.target.closest('button')) {
+                return;
+            }
+            
+            setTimeout(focusScanner, 0);
+        });
+
+        // Reset focus after we click on something on screen
+        document.addEventListener("click", () => {
             setTimeout(focusScanner, 0);
         });
 

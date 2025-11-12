@@ -40,6 +40,7 @@ was just adding another column with 1 or 0 for if it's been scanned or not.
 - Idea #4 created
 - Deleted the scan page, the home page is the main now
 - Scanner can now be used in bluetooth or usb dongle 2.4 mode
+- Updated the styling from 0 to a lot
 
 
 ## Ideas
