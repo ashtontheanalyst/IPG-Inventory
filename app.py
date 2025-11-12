@@ -1,10 +1,15 @@
-from flask import Flask, render_template, request, jsonify, redirect
+from flask import Flask, render_template, request, jsonify, redirect, send_file
 import pandas as pd
 import csv
+from pdfgeneration import *
 
 
 # Init app
 app = Flask(__name__)
+
+CSV_PATH = "./data/Inventory.csv"
+PDF_TMP_DIR = Path("./tmp")
+PDF_TMP_DIR.mkdir(exist_ok=True)
 
 # Entire inventory CSV df
 data = pd.read_csv('./data/Inventory.csv')
@@ -14,24 +19,15 @@ items = data[['category_name','serial_number', 'location']]
 # inventory
 inventory = []
 
-
-
-
 # Home
 @app.route("/")
 def home():
     return render_template('home.html')
 
-
-
-
 # Scanner Help Page
 @app.route("/scannerHelp")
 def scannerHelp():
     return render_template('scannerHelp.html')
-
-
-
 
 @app.route("/getTable")
 def getTable():
@@ -51,7 +47,6 @@ def getTable():
             })
 
     return jsonify({"status": "ok", "items": inventory})
-
 
 # Sort the table based on A-Z or Z-A
 @app.route("/sortTable")
@@ -92,7 +87,6 @@ def sortTable():
 
     return jsonify({"status": "ok", "items": inventory})
 
-
 # Filter the table based on location
 @app.route("/filterTable")
 def filterTable():
@@ -119,9 +113,6 @@ def filterTable():
 
     return jsonify({"status": "ok", "items": inventory})
 
-
-
-
 # Marking an item present in the CSV based on scan from frontend
 @app.route("/markPresent")
 def markPresent():
@@ -147,7 +138,6 @@ def markPresent():
 
     return jsonify({"status": "ok", "items": inventory})
 
-
 # Resets the inventory column to all false values in the CSV
 @app.route("/resetInvCol")
 def resetInvCol():
@@ -172,8 +162,17 @@ def resetInvCol():
 
     return jsonify({"status": "ok", "items": inventory})
 
+@app.route("/generatepdf")
+def generate_pdf_route():
+    project_name = request.args.get("project_name")
+    if not project_name:
+        return jsonify({"status": "error", "message": "Project name required"}), 400
 
-
+    final_pdf = generate_pdf(project_name)
+    if final_pdf.exists():
+        return send_file(final_pdf, as_attachment=True, mimetype='application/pdf')
+    else:
+        return jsonify({"status": "error", "message": "Error generating PDF"}), 500
 
 # Run the App
 if __name__ == '__main__':

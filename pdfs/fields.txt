@@ -1,0 +1,3201 @@
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].FROM[0]
+FieldNameAlt: from.enter text.
+FieldFlags: 8388608
+FieldValue: 
+FieldValue: BCDC, IPG
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].TO[0]
+FieldNameAlt: to.enter text.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].RECPTNR[0]
+FieldNameAlt: enter hand receipt number.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].ENDITEMS[0]
+FieldNameAlt: for annex or c r only.enter end item stock number.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].ITEMDES[0]
+FieldNameAlt: enter end item description.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].PUBNR[0]
+FieldNameAlt: enter publication number.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].PUBDATE[0]
+FieldNameAlt: enter publication date.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Left
+FieldMaxLength: 18
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QUANTITY[0]
+FieldNameAlt: enter quantity.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].STOCKNRA[0]
+FieldNameAlt: a..  enter stock number for row 1.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].STOCKNRA_1[0]
+FieldNameAlt: a..  enter stock number for row 2.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].STOCKNRA_2[0]
+FieldNameAlt: a..  enter stock number for row 3.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].STOCKNRA_3[0]
+FieldNameAlt: a..  enter stock number for row 4.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].STOCKNRA_4[0]
+FieldNameAlt: a..  enter stock number for row 5.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].STOCKNRA_5[0]
+FieldNameAlt: a..  enter stock number for row 6.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].STOCKNRA_6[0]
+FieldNameAlt: a..  enter stock number for row 7.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].STOCKNRA_7[0]
+FieldNameAlt: a..  enter stock number for row 8.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].STOCKNRA_8[0]
+FieldNameAlt: a..  enter stock number for row 9.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].STOCKNRA_9[0]
+FieldNameAlt: a..  enter stock number for row 10.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].STOCKNRA_10[0]
+FieldNameAlt: a..  enter stock number for row 11.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].STOCKNRA_11[0]
+FieldNameAlt: a..  enter stock number for row 12.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].STOCKNRA_12[0]
+FieldNameAlt: a..  enter stock number for row 13.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].STOCKNRA_13[0]
+FieldNameAlt: a..  enter stock number for row 14.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].STOCKNRA_14[0]
+FieldNameAlt: a..  enter stock number for row 15.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].STOCKNRA_15[0]
+FieldNameAlt: a..  enter stock number for row 16.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].ITEMDESA[0]
+FieldNameAlt: b. enter  item description for row 1.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].ITEMDESA_1[0]
+FieldNameAlt: b. enter  item description for row 2.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].ITEMDESA_2[0]
+FieldNameAlt: b. enter  item description for row 3.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].ITEMDESA_3[0]
+FieldNameAlt: b. enter  item description for row 4.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].ITEMDESA_4[0]
+FieldNameAlt: b. enter  item description for row 5.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].ITEMDESA_5[0]
+FieldNameAlt: b. enter  item description for row 6.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].ITEMDESA_6[0]
+FieldNameAlt: b. enter  item description for row 7.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].ITEMDESA_7[0]
+FieldNameAlt: b. enter  item description for row 8.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].ITEMDESA_8[0]
+FieldNameAlt: b. enter  item description for row 9.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].ITEMDESA_9[0]
+FieldNameAlt: b. enter  item description for row 10.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].ITEMDESA_10[0]
+FieldNameAlt: b. enter  item description for row 11.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].ITEMDESA_11[0]
+FieldNameAlt: b. enter  item description for row 12.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].ITEMDESA_12[0]
+FieldNameAlt: b. enter  item description for row 13.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].ITEMDESA_13[0]
+FieldNameAlt: b. enter  item description for row 14.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].ITEMDESA_14[0]
+FieldNameAlt: b. enter  item description for row 15.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].ITEMDESA_15[0]
+FieldNameAlt: b. enter  item description for row 16.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SPCLA[0]
+FieldNameAlt: c. asterisk. enter text for row 1.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SPCLA_1[0]
+FieldNameAlt: c. asterisk. enter text for row 2.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SPCLA_2[0]
+FieldNameAlt: c. asterisk. enter text for row 3.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SPCLA_3[0]
+FieldNameAlt: c. asterisk. enter text for row 4.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SPCLA_4[0]
+FieldNameAlt: c. asterisk. enter text for row 5.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SPCLA_5[0]
+FieldNameAlt: c. asterisk. enter text for row 6.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SPCLA_6[0]
+FieldNameAlt: c. asterisk. enter text for row 7.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SPCLA_7[0]
+FieldNameAlt: c. asterisk. enter text for row 8.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SPCLA_8[0]
+FieldNameAlt: c. asterisk. enter text for row 9.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SPCLA_9[0]
+FieldNameAlt: c. asterisk. enter text for row 10.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SPCLA_10[0]
+FieldNameAlt: c. asterisk. enter text for row 11.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SPCLA_11[0]
+FieldNameAlt: c. asterisk. enter text for row 12.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SPCLA_12[0]
+FieldNameAlt: c. asterisk. enter text for row 13.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SPCLA_13[0]
+FieldNameAlt: c. asterisk. enter text for row 14.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SPCLA_14[0]
+FieldNameAlt: c. asterisk. enter text for row 15.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SPCLA_15[0]
+FieldNameAlt: c. asterisk. enter text for row 16.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SECA[0]
+FieldNameAlt: d. s e c. enter text for row 1.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SECA_1[0]
+FieldNameAlt: d. s e c. enter text for row 2.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SECA_2[0]
+FieldNameAlt: d. s e c. enter text for row 3.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SECA_3[0]
+FieldNameAlt: d. s e c. enter text for row 4.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SECA_4[0]
+FieldNameAlt: d. s e c. enter text for row 5.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SECA_5[0]
+FieldNameAlt: d. s e c. enter text for row 6.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SECA_6[0]
+FieldNameAlt: d. s e c. enter text for row 7.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SECA_7[0]
+FieldNameAlt: d. s e c. enter text for row 8.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SECA_8[0]
+FieldNameAlt: d. s e c. enter text for row 9.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SECA_9[0]
+FieldNameAlt: d. s e c. enter text for row 10.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SECA_10[0]
+FieldNameAlt: d. s e c. enter text for row 11.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SECA_11[0]
+FieldNameAlt: d. s e c. enter text for row 12.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SECA_12[0]
+FieldNameAlt: d. s e c. enter text for row 13.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SECA_13[0]
+FieldNameAlt: d. s e c. enter text for row 14.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SECA_14[0]
+FieldNameAlt: d. s e c. enter text for row 15.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].SECA_15[0]
+FieldNameAlt: d. s e c. enter text for row 16.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].UIA[0]
+FieldNameAlt: e. u i. enter text for row 1.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].UIA_1[0]
+FieldNameAlt: e. u i. enter text for row 2.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].UIA_2[0]
+FieldNameAlt: e. u i. enter text for row 3.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].UIA_3[0]
+FieldNameAlt: e. u i. enter text for row 4.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].UIA_4[0]
+FieldNameAlt: e. u i. enter text for row 5.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].UIA_5[0]
+FieldNameAlt: e. u i. enter text for row 6.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].UIA_6[0]
+FieldNameAlt: e. u i. enter text for row 7.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].UIA_7[0]
+FieldNameAlt: e. u i. enter text for row 8.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].UIA_8[0]
+FieldNameAlt: e. u i. enter text for row 9.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].UIA_9[0]
+FieldNameAlt: e. u i. enter text for row 10.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].UIA_10[0]
+FieldNameAlt: e. u i. enter text for row 11.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].UIA_11[0]
+FieldNameAlt: e. u i. enter text for row 12.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].UIA_12[0]
+FieldNameAlt: e. u i. enter text for row 13.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].UIA_13[0]
+FieldNameAlt: e. u i. enter text for row 14.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].UIA_14[0]
+FieldNameAlt: e. u i. enter text for row 15.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].UIA_15[0]
+FieldNameAlt: e. u i. enter text for row 16.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAUTHA[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 1.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAUTHA_1[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 2.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAUTHA_2[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 3.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAUTHA_3[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 4.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAUTHA_4[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 5.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAUTHA_5[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 6.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAUTHA_6[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 7.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAUTHA_7[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 8.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAUTHA_8[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 9.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAUTHA_9[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 10.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAUTHA_10[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 11.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAUTHA_11[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 12.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAUTHA_12[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 13.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAUTHA_13[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 14.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAUTHA_14[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 15.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAUTHA_15[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 16.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAA[0]
+FieldNameAlt: g. quantity. a.. enter text for row 1.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAA_1[0]
+FieldNameAlt: g. quantity. a.. enter text for row 2.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAA_2[0]
+FieldNameAlt: g. quantity. a.. enter text for row 3.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAA_3[0]
+FieldNameAlt: g. quantity. a.. enter text for row 4.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAA_4[0]
+FieldNameAlt: g. quantity. a.. enter text for row 5.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAA_5[0]
+FieldNameAlt: g. quantity. a.. enter text for row 6.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAA_6[0]
+FieldNameAlt: g. quantity. a.. enter text for row 7.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAA_7[0]
+FieldNameAlt: g. quantity. a.. enter text for row 8.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAA_8[0]
+FieldNameAlt: g. quantity. a.. enter text for row 9.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAA_9[0]
+FieldNameAlt: g. quantity. a.. enter text for row 10.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAA_10[0]
+FieldNameAlt: g. quantity. a.. enter text for row 11.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAA_11[0]
+FieldNameAlt: g. quantity. a.. enter text for row 12.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAA_12[0]
+FieldNameAlt: g. quantity. a.. enter text for row 13.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAA_13[0]
+FieldNameAlt: g. quantity. a.. enter text for row 14.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAA_14[0]
+FieldNameAlt: g. quantity. a.. enter text for row 15.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYAA_15[0]
+FieldNameAlt: g. quantity. a.. enter text for row 16.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYBA[0]
+FieldNameAlt: g. quantity. b. enter text for row 1.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYBA_1[0]
+FieldNameAlt: g. quantity. b. enter text for row 2.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYBA_2[0]
+FieldNameAlt: g. quantity. b. enter text for row 3.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYBA_3[0]
+FieldNameAlt: g. quantity. b. enter text for row 4.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYBA_4[0]
+FieldNameAlt: g. quantity. b. enter text for row 5.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYBA_5[0]
+FieldNameAlt: g. quantity. b. enter text for row 6.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYBA_6[0]
+FieldNameAlt: g. quantity. b. enter text for row 7.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYBA_7[0]
+FieldNameAlt: g. quantity. b. enter text for row 8.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYBA_8[0]
+FieldNameAlt: g. quantity. b. enter text for row 9.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYBA_9[0]
+FieldNameAlt: g. quantity. b. enter text for row 10.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYBA_10[0]
+FieldNameAlt: g. quantity. b. enter text for row 11.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYBA_11[0]
+FieldNameAlt: g. quantity. b. enter text for row 12.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYBA_12[0]
+FieldNameAlt: g. quantity. b. enter text for row 13.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYBA_13[0]
+FieldNameAlt: g. quantity. b. enter text for row 14.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYBA_14[0]
+FieldNameAlt: g. quantity. b. enter text for row 15.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYBA_15[0]
+FieldNameAlt: g. quantity. b. enter text for row 16.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYCA[0]
+FieldNameAlt: g. quantity. c. enter text for row 1.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYCA_1[0]
+FieldNameAlt: g. quantity. c. enter text for row 2.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYCA_2[0]
+FieldNameAlt: g. quantity. c. enter text for row 3.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYCA_3[0]
+FieldNameAlt: g. quantity. c. enter text for row 4.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYCA_4[0]
+FieldNameAlt: g. quantity. c. enter text for row 5.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYCA_5[0]
+FieldNameAlt: g. quantity. c. enter text for row 6.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYCA_6[0]
+FieldNameAlt: g. quantity. c. enter text for row 7.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYCA_7[0]
+FieldNameAlt: g. quantity. c. enter text for row 8.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYCA_8[0]
+FieldNameAlt: g. quantity. c. enter text for row 9.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYCA_9[0]
+FieldNameAlt: g. quantity. c. enter text for row 10.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYCA_10[0]
+FieldNameAlt: g. quantity. c. enter text for row 11.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYCA_11[0]
+FieldNameAlt: g. quantity. c. enter text for row 12.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYCA_12[0]
+FieldNameAlt: g. quantity. c. enter text for row 13.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYCA_13[0]
+FieldNameAlt: g. quantity. c. enter text for row 14.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYCA_14[0]
+FieldNameAlt: g. quantity. c. enter text for row 15.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYCA_15[0]
+FieldNameAlt: g. quantity. c. enter text for row 16.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYDA[0]
+FieldNameAlt: g. quantity. d. enter text for row 1.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYDA_1[0]
+FieldNameAlt: g. quantity. d. enter text for row 2.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYDA_2[0]
+FieldNameAlt: g. quantity. d. enter text for row 3.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYDA_3[0]
+FieldNameAlt: g. quantity. d. enter text for row 4.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYDA_4[0]
+FieldNameAlt: g. quantity. d. enter text for row 5.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYDA_5[0]
+FieldNameAlt: g. quantity. d. enter text for row 6.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYDA_6[0]
+FieldNameAlt: g. quantity. d. enter text for row 7.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYDA_7[0]
+FieldNameAlt: g. quantity. d. enter text for row 8.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYDA_8[0]
+FieldNameAlt: g. quantity. d. enter text for row 9.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYDA_9[0]
+FieldNameAlt: g. quantity. d. enter text for row 10.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYDA_10[0]
+FieldNameAlt: g. quantity. d. enter text for row 11.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYDA_11[0]
+FieldNameAlt: g. quantity. d. enter text for row 12.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYDA_12[0]
+FieldNameAlt: g. quantity. d. enter text for row 13.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYDA_13[0]
+FieldNameAlt: g. quantity. d. enter text for row 14.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYDA_14[0]
+FieldNameAlt: g. quantity. d. enter text for row 15.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYDA_15[0]
+FieldNameAlt: g. quantity. d. enter text for row 16.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYEA[0]
+FieldNameAlt: g. quantity. e. enter text for row 1.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYEA_1[0]
+FieldNameAlt: g. quantity. e. enter text for row 2.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYEA_2[0]
+FieldNameAlt: g. quantity. e. enter text for row 3.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYEA_3[0]
+FieldNameAlt: g. quantity. e. enter text for row 4.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYEA_4[0]
+FieldNameAlt: g. quantity. e. enter text for row 5.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYEA_5[0]
+FieldNameAlt: g. quantity. e. enter text for row 6.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYEA_6[0]
+FieldNameAlt: g. quantity. e. enter text for row 7.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYEA_7[0]
+FieldNameAlt: g. quantity. e. enter text for row 8.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYEA_8[0]
+FieldNameAlt: g. quantity. e. enter text for row 9.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYEA_9[0]
+FieldNameAlt: g. quantity. e. enter text for row 10.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYEA_10[0]
+FieldNameAlt: g. quantity. e. enter text for row 11.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYEA_11[0]
+FieldNameAlt: g. quantity. e. enter text for row 12.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYEA_12[0]
+FieldNameAlt: g. quantity. e. enter text for row 13.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYEA_13[0]
+FieldNameAlt: g. quantity. e. enter text for row 14.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYEA_14[0]
+FieldNameAlt: g. quantity. e. enter text for row 15.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYEA_15[0]
+FieldNameAlt: g. quantity. e. enter text for row 16.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYFA[0]
+FieldNameAlt: g. quantity. f. enter text for row 1.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYFA_1[0]
+FieldNameAlt: g. quantity. f. enter text for row 2.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYFA_2[0]
+FieldNameAlt: g. quantity. f. enter text for row 3.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYFA_3[0]
+FieldNameAlt: g. quantity. f. enter text for row 4.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYFA_4[0]
+FieldNameAlt: g. quantity. f. enter text for row 5.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYFA_5[0]
+FieldNameAlt: g. quantity. f. enter text for row 6.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYFA_6[0]
+FieldNameAlt: g. quantity. f. enter text for row 7.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYFA_7[0]
+FieldNameAlt: g. quantity. f. enter text for row 8.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYFA_8[0]
+FieldNameAlt: g. quantity. f. enter text for row 9.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYFA_9[0]
+FieldNameAlt: g. quantity. f. enter text for row 10.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYFA_10[0]
+FieldNameAlt: g. quantity. f. enter text for row 11.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYFA_11[0]
+FieldNameAlt: g. quantity. f. enter text for row 12.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYFA_12[0]
+FieldNameAlt: g. quantity. f. enter text for row 13.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYFA_13[0]
+FieldNameAlt: g. quantity. f. enter text for row 14.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYFA_14[0]
+FieldNameAlt: g. quantity. f. enter text for row 15.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].QTYFA_15[0]
+FieldNameAlt: g. quantity. f. enter text for row 16.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].PAGEA[0]
+FieldNameAlt: enter page number.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page1[0].OFPGA[0]
+FieldNameAlt: enter total number of pages.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Button
+FieldName: form1[0].#pageSet[0].Page2[0].Button2[0]
+FieldNameAlt: Continuation Page
+FieldFlags: 65536
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].STOCKNRB[0]
+FieldNameAlt: page 2 of 2.a..  enter stock number for row 1.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].STOCKNRB_1[0]
+FieldNameAlt: a..  enter stock number for row 2.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].STOCKNRB_2[0]
+FieldNameAlt: a..  enter stock number for row 3.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].STOCKNRB_3[0]
+FieldNameAlt: a..  enter stock number for row 4.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].STOCKNRB_4[0]
+FieldNameAlt: a..  enter stock number for row 5.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].STOCKNRB_5[0]
+FieldNameAlt: a..  enter stock number for row 6.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].STOCKNRB_6[0]
+FieldNameAlt: a..  enter stock number for row 7.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].STOCKNRB_7[0]
+FieldNameAlt: a..  enter stock number for row 8.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].STOCKNRB_8[0]
+FieldNameAlt: a..  enter stock number for row 9.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].STOCKNRB_9[0]
+FieldNameAlt: a..  enter stock number for row 10.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].STOCKNRB_10[0]
+FieldNameAlt: a..  enter stock number for row 11.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].STOCKNRB_11[0]
+FieldNameAlt: a..  enter stock number for row 12.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].STOCKNRB_12[0]
+FieldNameAlt: a..  enter stock number for row 13.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].STOCKNRB_13[0]
+FieldNameAlt: a..  enter stock number for row 14.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].STOCKNRB_14[0]
+FieldNameAlt: a..  enter stock number for row 15.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].STOCKNRB_15[0]
+FieldNameAlt: a..  enter stock number for row 16.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].STOCKNRB_16[0]
+FieldNameAlt: a..  enter stock number for row 17.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].STOCKNRB_17[0]
+FieldNameAlt: a..  enter stock number for row 18.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].STOCKNRB_18[0]
+FieldNameAlt: a..  enter stock number for row 19.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].STOCKNRB_19[0]
+FieldNameAlt: a..  enter stock number for row 20.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].STOCKNRB_20[0]
+FieldNameAlt: a..  enter stock number for row 21.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].ITEMDESB[0]
+FieldNameAlt: b. enter  item description for row 1.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].ITEMDESB_1[0]
+FieldNameAlt: b. enter  item description for row 2.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].ITEMDESB_2[0]
+FieldNameAlt: b. enter  item description for row 3.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].ITEMDESB_3[0]
+FieldNameAlt: b. enter  item description for row 4.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].ITEMDESB_4[0]
+FieldNameAlt: b. enter  item description for row 5.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].ITEMDESB_5[0]
+FieldNameAlt: b. enter  item description for row 6.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].ITEMDESB_6[0]
+FieldNameAlt: b. enter  item description for row 7.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].ITEMDESB_7[0]
+FieldNameAlt: b. enter  item description for row 8.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].ITEMDESB_8[0]
+FieldNameAlt: b. enter  item description for row 9.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].ITEMDESB_9[0]
+FieldNameAlt: b. enter  item description for row 10.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].ITEMDESB_10[0]
+FieldNameAlt: b. enter  item description for row 11.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].ITEMDESB_11[0]
+FieldNameAlt: b. enter  item description for row 12.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].ITEMDESB_12[0]
+FieldNameAlt: b. enter  item description for row 13.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].ITEMDESB_13[0]
+FieldNameAlt: b. enter  item description for row 14.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].ITEMDESB_14[0]
+FieldNameAlt: b. enter  item description for row 15.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].ITEMDESB_15[0]
+FieldNameAlt: b. enter  item description for row 16.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].ITEMDESB_16[0]
+FieldNameAlt: b. enter  item description for row 17.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].ITEMDESB_17[0]
+FieldNameAlt: b. enter  item description for row 18.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].ITEMDESB_18[0]
+FieldNameAlt: b. enter  item description for row 19.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].ITEMDESB_19[0]
+FieldNameAlt: b. enter  item description for row 20.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].ITEMDESB_20[0]
+FieldNameAlt: b. enter  item description for row 21.
+FieldFlags: 8392704
+FieldValue: 
+FieldJustification: Left
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SPCLB[0]
+FieldNameAlt: c. asterisk. enter text for row 1.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SPCLB_1[0]
+FieldNameAlt: c. asterisk. enter text for row 2.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SPCLB_2[0]
+FieldNameAlt: c. asterisk. enter text for row 3.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SPCLB_3[0]
+FieldNameAlt: c. asterisk. enter text for row 4.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SPCLB_4[0]
+FieldNameAlt: c. asterisk. enter text for row 5.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SPCLB_5[0]
+FieldNameAlt: c. asterisk. enter text for row 6.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SPCLB_6[0]
+FieldNameAlt: c. asterisk. enter text for row 7.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SPCLB_7[0]
+FieldNameAlt: c. asterisk. enter text for row 8.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SPCLB_8[0]
+FieldNameAlt: c. asterisk. enter text for row 9.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SPCLB_9[0]
+FieldNameAlt: c. asterisk. enter text for row 10.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SPCLB_10[0]
+FieldNameAlt: c. asterisk. enter text for row 11.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SPCLB_11[0]
+FieldNameAlt: c. asterisk. enter text for row 12.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SPCLB_12[0]
+FieldNameAlt: c. asterisk. enter text for row 13.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SPCLB_13[0]
+FieldNameAlt: c. asterisk. enter text for row 14.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SPCLB_14[0]
+FieldNameAlt: c. asterisk. enter text for row 15.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SPCLB_15[0]
+FieldNameAlt: c. asterisk. enter text for row 16.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SPCLB_16[0]
+FieldNameAlt: c. asterisk. enter text for row 17.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SPCLB_17[0]
+FieldNameAlt: c. asterisk. enter text for row 18.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SPCLB_18[0]
+FieldNameAlt: c. asterisk. enter text for row 19.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SPCLB_19[0]
+FieldNameAlt: c. asterisk. enter text for row 20.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SPCLB_20[0]
+FieldNameAlt: c. asterisk. enter text for row 21.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SECB[0]
+FieldNameAlt: d. s e c. enter text for row 1.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SECB_1[0]
+FieldNameAlt: d. s e c. enter text for row 2.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SECB_2[0]
+FieldNameAlt: d. s e c. enter text for row 3.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SECB_3[0]
+FieldNameAlt: d. s e c. enter text for row 4.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SECB_4[0]
+FieldNameAlt: d. s e c. enter text for row 5.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SECB_5[0]
+FieldNameAlt: d. s e c. enter text for row 6.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SECB_6[0]
+FieldNameAlt: d. s e c. enter text for row 7.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SECB_7[0]
+FieldNameAlt: d. s e c. enter text for row 8.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SECB_8[0]
+FieldNameAlt: d. s e c. enter text for row 9.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SECB_9[0]
+FieldNameAlt: d. s e c. enter text for row 10.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SECB_10[0]
+FieldNameAlt: d. s e c. enter text for row 11.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SECB_11[0]
+FieldNameAlt: d. s e c. enter text for row 12.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SECB_12[0]
+FieldNameAlt: d. s e c. enter text for row 13.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SECB_13[0]
+FieldNameAlt: d. s e c. enter text for row 14.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SECB_14[0]
+FieldNameAlt: d. s e c. enter text for row 15.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SECB_15[0]
+FieldNameAlt: d. s e c. enter text for row 16.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SECB_16[0]
+FieldNameAlt: d. s e c. enter text for row 17.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SECB_17[0]
+FieldNameAlt: d. s e c. enter text for row 18.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SECB_18[0]
+FieldNameAlt: d. s e c. enter text for row 19.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SECB_19[0]
+FieldNameAlt: d. s e c. enter text for row 20.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].SECB_20[0]
+FieldNameAlt: d. s e c. enter text for row 21.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].UIB[0]
+FieldNameAlt: e. u i. enter text for row 1.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].UIB_1[0]
+FieldNameAlt: e. u i. enter text for row 2.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].UIB_2[0]
+FieldNameAlt: e. u i. enter text for row 3.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].UIB_3[0]
+FieldNameAlt: e. u i. enter text for row 4.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].UIB_4[0]
+FieldNameAlt: e. u i. enter text for row 5.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].UIB_5[0]
+FieldNameAlt: e. u i. enter text for row 6.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].UIB_6[0]
+FieldNameAlt: e. u i. enter text for row 7.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].UIB_7[0]
+FieldNameAlt: e. u i. enter text for row 8.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].UIB_8[0]
+FieldNameAlt: e. u i. enter text for row 9.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].UIB_9[0]
+FieldNameAlt: e. u i. enter text for row 10.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].UIB_10[0]
+FieldNameAlt: e. u i. enter text for row 11.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].UIB_11[0]
+FieldNameAlt: e. u i. enter text for row 12.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].UIB_12[0]
+FieldNameAlt: e. u i. enter text for row 13.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].UIB_13[0]
+FieldNameAlt: e. u i. enter text for row 14.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].UIB_14[0]
+FieldNameAlt: e. u i. enter text for row 15.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].UIB_15[0]
+FieldNameAlt: e. u i. enter text for row 16.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].UIB_16[0]
+FieldNameAlt: e. u i. enter text for row 17.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].UIB_17[0]
+FieldNameAlt: e. u i. enter text for row 18.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].UIB_18[0]
+FieldNameAlt: e. u i. enter text for row 19.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].UIB_19[0]
+FieldNameAlt: e. u i. enter text for row 20.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].UIB_20[0]
+FieldNameAlt: e. u i. enter text for row 21.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAUTHB[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 1.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAUTHB_1[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 2.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAUTHB_2[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 3.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAUTHB_3[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 4.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAUTHB_4[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 5.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAUTHB_5[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 6.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAUTHB_6[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 7.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAUTHB_7[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 8.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAUTHB_8[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 9.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAUTHB_9[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 10.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAUTHB_10[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 11.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAUTHB_11[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 12.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAUTHB_12[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 13.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAUTHB_13[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 14.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAUTHB_14[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 15.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAUTHB_15[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 16.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAUTHB_16[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 17.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAUTHB_17[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 18.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAUTHB_18[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 19.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAUTHB_19[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 20.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAUTHB_20[0]
+FieldNameAlt: f. quantity a u t h. enter text for row 21.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAB[0]
+FieldNameAlt: g. quantity. a.. enter text for row 1.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAB_1[0]
+FieldNameAlt: g. quantity. a.. enter text for row 2.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAB_2[0]
+FieldNameAlt: g. quantity. a.. enter text for row 3.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAB_3[0]
+FieldNameAlt: g. quantity. a.. enter text for row 4.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAB_4[0]
+FieldNameAlt: g. quantity. a.. enter text for row 5.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAB_5[0]
+FieldNameAlt: g. quantity. a.. enter text for row 6.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAB_6[0]
+FieldNameAlt: g. quantity. a.. enter text for row 7.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAB_7[0]
+FieldNameAlt: g. quantity. a.. enter text for row 8.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAB_8[0]
+FieldNameAlt: g. quantity. a.. enter text for row 9.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAB_9[0]
+FieldNameAlt: g. quantity. a.. enter text for row 10.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAB_10[0]
+FieldNameAlt: g. quantity. a.. enter text for row 11.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAB_11[0]
+FieldNameAlt: g. quantity. a.. enter text for row 12.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAB_12[0]
+FieldNameAlt: g. quantity. a.. enter text for row 13.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAB_13[0]
+FieldNameAlt: g. quantity. a.. enter text for row 14.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAB_14[0]
+FieldNameAlt: g. quantity. a.. enter text for row 15.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAB_15[0]
+FieldNameAlt: g. quantity. a.. enter text for row 16.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAB_16[0]
+FieldNameAlt: g. quantity. a.. enter text for row 17.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAB_17[0]
+FieldNameAlt: g. quantity. a.. enter text for row 18.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAB_18[0]
+FieldNameAlt: g. quantity. a.. enter text for row 19.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAB_19[0]
+FieldNameAlt: g. quantity. a.. enter text for row 20.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYAB_20[0]
+FieldNameAlt: g. quantity. a.. enter text for row 21.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYBB[0]
+FieldNameAlt: g. quantity. b. enter text for row 1.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYBB_1[0]
+FieldNameAlt: g. quantity. b. enter text for row 2.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYBB_2[0]
+FieldNameAlt: g. quantity. b. enter text for row 3.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYBB_3[0]
+FieldNameAlt: g. quantity. b. enter text for row 4.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYBB_4[0]
+FieldNameAlt: g. quantity. b. enter text for row 5.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYBB_5[0]
+FieldNameAlt: g. quantity. b. enter text for row 6.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYBB_6[0]
+FieldNameAlt: g. quantity. b. enter text for row 7.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYBB_7[0]
+FieldNameAlt: g. quantity. b. enter text for row 8.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYBB_8[0]
+FieldNameAlt: g. quantity. b. enter text for row 9.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYBB_9[0]
+FieldNameAlt: g. quantity. b. enter text for row 10.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYBB_10[0]
+FieldNameAlt: g. quantity. b. enter text for row 11.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYBB_11[0]
+FieldNameAlt: g. quantity. b. enter text for row 12.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYBB_12[0]
+FieldNameAlt: g. quantity. b. enter text for row 13.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYBB_13[0]
+FieldNameAlt: g. quantity. b. enter text for row 14.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYBB_14[0]
+FieldNameAlt: g. quantity. b. enter text for row 15.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYBB_15[0]
+FieldNameAlt: g. quantity. b. enter text for row 16.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYBB_16[0]
+FieldNameAlt: g. quantity. b. enter text for row 17.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYBB_17[0]
+FieldNameAlt: g. quantity. b. enter text for row 18.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYBB_18[0]
+FieldNameAlt: g. quantity. b. enter text for row 19.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYBB_19[0]
+FieldNameAlt: g. quantity. b. enter text for row 20.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYBB_20[0]
+FieldNameAlt: g. quantity. b. enter text for row 21.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYCB[0]
+FieldNameAlt: g. quantity. c. enter text for row 1.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYCB_1[0]
+FieldNameAlt: g. quantity. c. enter text for row 2.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYCB_2[0]
+FieldNameAlt: g. quantity. c. enter text for row 3.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYCB_3[0]
+FieldNameAlt: g. quantity. c. enter text for row 4.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYCB_4[0]
+FieldNameAlt: g. quantity. c. enter text for row 5.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYCB_5[0]
+FieldNameAlt: g. quantity. c. enter text for row 6.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYCB_6[0]
+FieldNameAlt: g. quantity. c. enter text for row 7.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYCB_7[0]
+FieldNameAlt: g. quantity. c. enter text for row 8.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYCB_8[0]
+FieldNameAlt: g. quantity. c. enter text for row 9.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYCB_9[0]
+FieldNameAlt: g. quantity. c. enter text for row 10.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYCB_10[0]
+FieldNameAlt: g. quantity. c. enter text for row 11.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYCB_11[0]
+FieldNameAlt: g. quantity. c. enter text for row 12.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYCB_12[0]
+FieldNameAlt: g. quantity. c. enter text for row 13.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYCB_13[0]
+FieldNameAlt: g. quantity. c. enter text for row 14.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYCB_14[0]
+FieldNameAlt: g. quantity. c. enter text for row 15.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYCB_15[0]
+FieldNameAlt: g. quantity. c. enter text for row 16.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYCB_16[0]
+FieldNameAlt: g. quantity. c. enter text for row 17.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYCB_17[0]
+FieldNameAlt: g. quantity. c. enter text for row 18.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYCB_18[0]
+FieldNameAlt: g. quantity. c. enter text for row 19.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYCB_19[0]
+FieldNameAlt: g. quantity. c. enter text for row 20.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYCB_20[0]
+FieldNameAlt: g. quantity. c. enter text for row 21.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYDB[0]
+FieldNameAlt: g. quantity. d. enter text for row 1.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYDB_1[0]
+FieldNameAlt: g. quantity. d. enter text for row 2.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYDB_2[0]
+FieldNameAlt: g. quantity. d. enter text for row 3.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYDB_3[0]
+FieldNameAlt: g. quantity. d. enter text for row 4.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYDB_4[0]
+FieldNameAlt: g. quantity. d. enter text for row 5.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYDB_5[0]
+FieldNameAlt: g. quantity. d. enter text for row 6.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYDB_6[0]
+FieldNameAlt: g. quantity. d. enter text for row 7.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYDB_7[0]
+FieldNameAlt: g. quantity. d. enter text for row 8.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYDB_8[0]
+FieldNameAlt: g. quantity. d. enter text for row 9.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYDB_9[0]
+FieldNameAlt: g. quantity. d. enter text for row 10.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYDB_10[0]
+FieldNameAlt: g. quantity. d. enter text for row 11.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYDB_11[0]
+FieldNameAlt: g. quantity. d. enter text for row 12.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYDB_12[0]
+FieldNameAlt: g. quantity. d. enter text for row 13.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYDB_13[0]
+FieldNameAlt: g. quantity. d. enter text for row 14.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYDB_14[0]
+FieldNameAlt: g. quantity. d. enter text for row 15.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYDB_15[0]
+FieldNameAlt: g. quantity. d. enter text for row 16.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYDB_16[0]
+FieldNameAlt: g. quantity. d. enter text for row 17.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYDB_17[0]
+FieldNameAlt: g. quantity. d. enter text for row 18.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYDB_18[0]
+FieldNameAlt: g. quantity. d. enter text for row 19.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYDB_19[0]
+FieldNameAlt: g. quantity. d. enter text for row 20.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYDB_20[0]
+FieldNameAlt: g. quantity. d. enter text for row 21.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYEB[0]
+FieldNameAlt: g. quantity. e. enter text for row 1.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYEB_1[0]
+FieldNameAlt: g. quantity. e. enter text for row 2.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYEB_2[0]
+FieldNameAlt: g. quantity. e. enter text for row 3.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYEB_3[0]
+FieldNameAlt: g. quantity. e. enter text for row 4.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYEB_4[0]
+FieldNameAlt: g. quantity. e. enter text for row 5.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYEB_5[0]
+FieldNameAlt: g. quantity. e. enter text for row 6.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYEB_6[0]
+FieldNameAlt: g. quantity. e. enter text for row 7.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYEB_7[0]
+FieldNameAlt: g. quantity. e. enter text for row 8.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYEB_8[0]
+FieldNameAlt: g. quantity. e. enter text for row 9.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYEB_9[0]
+FieldNameAlt: g. quantity. e. enter text for row 10.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYEB_10[0]
+FieldNameAlt: g. quantity. e. enter text for row 11.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYEB_11[0]
+FieldNameAlt: g. quantity. e. enter text for row 12.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYEB_12[0]
+FieldNameAlt: g. quantity. e. enter text for row 13.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYEB_13[0]
+FieldNameAlt: g. quantity. e. enter text for row 14.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYEB_14[0]
+FieldNameAlt: g. quantity. e. enter text for row 15.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYEB_15[0]
+FieldNameAlt: g. quantity. e. enter text for row 16.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYEB_16[0]
+FieldNameAlt: g. quantity. e. enter text for row 17.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYEB_17[0]
+FieldNameAlt: g. quantity. e. enter text for row 18.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYEB_18[0]
+FieldNameAlt: g. quantity. e. enter text for row 19.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYEB_19[0]
+FieldNameAlt: g. quantity. e. enter text for row 20.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYEB_20[0]
+FieldNameAlt: g. quantity. e. enter text for row 21.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYFB[0]
+FieldNameAlt: g. quantity. f. enter text for row 1.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYFB_1[0]
+FieldNameAlt: g. quantity. f. enter text for row 2.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYFB_2[0]
+FieldNameAlt: g. quantity. f. enter text for row 3.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYFB_3[0]
+FieldNameAlt: g. quantity. f. enter text for row 4.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYFB_4[0]
+FieldNameAlt: g. quantity. f. enter text for row 5.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYFB_5[0]
+FieldNameAlt: g. quantity. f. enter text for row 6.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYFB_6[0]
+FieldNameAlt: g. quantity. f. enter text for row 7.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYFB_7[0]
+FieldNameAlt: g. quantity. f. enter text for row 8.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYFB_8[0]
+FieldNameAlt: g. quantity. f. enter text for row 9.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYFB_9[0]
+FieldNameAlt: g. quantity. f. enter text for row 10.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYFB_10[0]
+FieldNameAlt: g. quantity. f. enter text for row 11.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYFB_11[0]
+FieldNameAlt: g. quantity. f. enter text for row 12.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYFB_12[0]
+FieldNameAlt: g. quantity. f. enter text for row 13.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYFB_13[0]
+FieldNameAlt: g. quantity. f. enter text for row 14.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYFB_14[0]
+FieldNameAlt: g. quantity. f. enter text for row 15.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYFB_15[0]
+FieldNameAlt: g. quantity. f. enter text for row 16.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYFB_16[0]
+FieldNameAlt: g. quantity. f. enter text for row 17.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYFB_17[0]
+FieldNameAlt: g. quantity. f. enter text for row 18.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYFB_18[0]
+FieldNameAlt: g. quantity. f. enter text for row 19.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYFB_19[0]
+FieldNameAlt: g. quantity. f. enter text for row 20.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].QTYFB_20[0]
+FieldNameAlt: g. quantity. f. enter text for row 21.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].PAGEA[0]
+FieldNameAlt: enter page number.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center
+---
+FieldType: Text
+FieldName: form1[0].Page2[0].OFPGA[0]
+FieldNameAlt: enter total number of pages.
+FieldFlags: 8388608
+FieldValue: 
+FieldJustification: Center

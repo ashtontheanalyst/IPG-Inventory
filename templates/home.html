@@ -25,6 +25,7 @@
     <label><input type="radio" name="option" value="MCC" id="MCCbtn">MCC</label>
     <br><br>
 
+    <button id="generatePdfBtn" type="button">Generate PDF</button>
 
     <table id="inventory"></table>
 
@@ -193,3 +194,29 @@
     </script>
 </body>
 </html>
+<script>
+    const generatePdfBtn = document.getElementById("generatePdfBtn");
+
+    generatePdfBtn.addEventListener("click", async () => {
+        try {
+            const response = await fetch(`/generatepdf?project_name=default`);
+            if (!response.ok) throw new Error("Network response was not ok");
+
+        // Get the PDF data as a blob
+        const blob = await response.blob();
+
+        // Create a temporary link to download the file
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "default_project.pdf"; // Set the download filename
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        window.URL.revokeObjectURL(url);
+    } catch (error) {
+        console.error("Error downloading PDF:", error);
+        alert("Failed to download PDF");
+    }
+    });
+</script>
