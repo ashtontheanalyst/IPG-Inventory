@@ -25,6 +25,14 @@ def home():
 
 
 
+# Scanner Help Page
+@app.route("/scannerHelp")
+def scannerHelp():
+    return render_template('scannerHelp.html')
+
+
+
+
 @app.route("/getTable")
 def getTable():
     inventory = []
