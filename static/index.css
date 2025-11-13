@@ -215,3 +215,35 @@ tbody tr:nth-child(odd) {
 tr.inventoriedRow td{
     background-color: rgb(183, 241, 183);
 }
+
+
+
+
+/*This is for the info.html Page*/
+#itemInfoCont {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 5% 5%;
+    border: none;
+    border-radius: 5px;
+    background-color: #500000;
+    color: white;
+}
+
+#itemInfoCont h1{
+    font-size: 3em;
+    margin: 0;
+    padding: 0;
+}
+
+#itemInfoCont p{
+    font-size: 1.25em;
+    font-family: Arial, Helvetica, sans-serif;
+    white-space: pre-line;
+    margin: 0;
+    margin-top: 10%;
+    padding: 0;
+}

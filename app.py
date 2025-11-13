@@ -175,6 +175,35 @@ def resetInvCol():
 
 
 
+# This is the page where we can scan an item and get all its data/info
+@app.route("/info")
+def info():
+    return render_template("info.html")
+
+# Backend API for getting that info off the CSV, then sending to the frontend
+@app.route("/getItemInfo")
+def getItemInfo():
+    value = request.args.get("value")
+
+    item = []
+
+    with open(DATA_CSV, newline="", encoding="utf-8") as csvfile:
+        csvinv = csv.DictReader(csvfile)
+        for row in csvinv:
+            if row["object_code"] == value:
+                item.append({
+                    "name": row["category_name"],
+                    "serial": row["serial_number"],
+                    "code": row["object_code"],
+                    "location": row["location"],
+                    "inventoried": row["inventoried"]
+                })
+
+    return jsonify({"status": "ok", "item": item})
+
+
+
+
 # Run the App
 if __name__ == '__main__':
     app.run(debug=True)

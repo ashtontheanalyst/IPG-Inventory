@@ -42,6 +42,17 @@ was just adding another column with 1 or 0 for if it's been scanned or not.
 - Scanner can now be used in bluetooth or usb dongle 2.4 mode
 - Updated the styling from 0 to a lot
 
+**11/13/25**
+- Scanner button lights up green (animated) whenever you scan an item in successfully so the
+end user is sure it did something
+- Scanned in items row in the table's background color gets changed to green in order to show
+it's been scanned also
+- Scanner is now in python anywhere under asmith@rellis email
+- On Safari/Iphones, the scanner input wasn't working (our first bug yay), the button would
+light up green but the row of the item's background wouldn't change or show that it had been
+scanned. The issue was the the scannerInput element had to get some styling changes so that
+Safari wouldn't siable it as "insecure"
+
 
 ## Ideas
 1. Convert Ethan's Ruby on Rails application to a Python Flask application
