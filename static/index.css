@@ -177,6 +177,9 @@ table, th, td{
 /*Just the table, like the outside*/
 table{
     box-shadow: 0px 0px 20px hsl(0, 0%, 90%);
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
 }
 
 /*This is the table header row/cells*/

@@ -1,15 +1,15 @@
 from flask import Flask, render_template, request, jsonify, redirect
 import pandas as pd
 import csv
+from pathlib import Path
 
 
 # Init app
 app = Flask(__name__)
 
 # Entire inventory CSV df
-data = pd.read_csv('./data/Inventory.csv')
-# df narrowed down to item name, serial, and location
-items = data[['category_name','serial_number', 'location']]
+BASE_DIR = Path(__file__).resolve().parent
+DATA_CSV = BASE_DIR / "data" / "Inventory.csv"
 
 # inventory
 inventory = []
@@ -36,14 +36,14 @@ def scannerHelp():
 @app.route("/getTable")
 def getTable():
     inventory = []
-    
+
     # Pulls the data from the csv file, updates the global inventory array as an array of dicts with each
     # item row, then sends it to the front end to make it a table
-    with open("./data/Inventory.csv", newline="", encoding="utf-8") as csvfile:
+    with open(DATA_CSV, newline="", encoding="utf-8") as csvfile:
         csvinv = csv.DictReader(csvfile)
         for row in csvinv:
             inventory.append({
-                "name": row["category_name"], 
+                "name": row["category_name"],
                 "serial": row["serial_number"],
                 "code": row["object_code"],
                 "location": row["location"],
@@ -62,23 +62,23 @@ def sortTable():
     inventory = []  # Clear
 
     if location == "ALL":
-        with open("./data/Inventory.csv", newline="", encoding="utf-8") as csvfile:
+        with open(DATA_CSV, newline="", encoding="utf-8") as csvfile:
             csvinv = csv.DictReader(csvfile)
             for row in csvinv:
                 inventory.append({
-                    "name": row["category_name"], 
+                    "name": row["category_name"],
                     "serial": row["serial_number"],
                     "code": row["object_code"],
                     "location": row["location"],
                     "inventoried": row["inventoried"]
                 })
     else:
-        with open("./data/Inventory.csv", newline="", encoding="utf-8") as csvfile:
+        with open(DATA_CSV, newline="", encoding="utf-8") as csvfile:
             csvinv = csv.DictReader(csvfile)
             for row in csvinv:
                 if row["location"] == location: # This is the line change for location
                     inventory.append({
-                        "name": row["category_name"], 
+                        "name": row["category_name"],
                         "serial": row["serial_number"],
                         "code": row["object_code"],
                         "location": row["location"],
@@ -101,12 +101,12 @@ def filterTable():
     inventory = []  # Clear
 
     if location != "ALL":
-        with open("./data/Inventory.csv", newline="", encoding="utf-8") as csvfile:
+        with open(DATA_CSV, newline="", encoding="utf-8") as csvfile:
             csvinv = csv.DictReader(csvfile)
             for row in csvinv:
                 if row["location"] == location:
                     inventory.append({
-                        "name": row["category_name"], 
+                        "name": row["category_name"],
                         "serial": row["serial_number"],
                         "code": row["object_code"],
                         "location": row["location"],
@@ -129,16 +129,16 @@ def markPresent():
     value = request.args.get("value")
 
     # Make the CSV a pandas df, update the value that's been scanned in, write it to the CSV
-    df = pd.read_csv("./data/Inventory.csv", dtype=str)
+    df = pd.read_csv(DATA_CSV, dtype=str)
     df.loc[df["object_code"] == value, "inventoried"] = "T"
-    df.to_csv("./data/Inventory.csv", index=False)
-    
+    df.to_csv(DATA_CSV, index=False)
+
     # Read the newly updated CSV data to be passed to the frontend
-    with open("./data/Inventory.csv", newline="", encoding="utf-8") as csvfile:
+    with open(DATA_CSV, newline="", encoding="utf-8") as csvfile:
         csvinv = csv.DictReader(csvfile)
         for row in csvinv:
             inventory.append({
-                "name": row["category_name"], 
+                "name": row["category_name"],
                 "serial": row["serial_number"],
                 "code": row["object_code"],
                 "location": row["location"],
@@ -154,16 +154,16 @@ def resetInvCol():
     inventory = []
 
     # Make the CSV a pandas df, update all inventoried cells to FALSE, write it to the CSV
-    df = pd.read_csv("./data/Inventory.csv", dtype=str)
+    df = pd.read_csv(DATA_CSV, dtype=str)
     df["inventoried"] = "F"
-    df.to_csv("./data/Inventory.csv", index=False)
-    
+    df.to_csv(DATA_CSV, index=False)
+
     # Read the newly updated CSV data to be passed to the frontend
-    with open("./data/Inventory.csv", newline="", encoding="utf-8") as csvfile:
+    with open(DATA_CSV, newline="", encoding="utf-8") as csvfile:
         csvinv = csv.DictReader(csvfile)
         for row in csvinv:
             inventory.append({
-                "name": row["category_name"], 
+                "name": row["category_name"],
                 "serial": row["serial_number"],
                 "code": row["object_code"],
                 "location": row["location"],
