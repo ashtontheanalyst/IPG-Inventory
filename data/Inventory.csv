@@ -1,6 +1,6 @@
 id,category_name,object_code,serial_number,created_at,updated_at,location,inventoried,repair_date,last_repair_date
-2,Silvus 4480 Radio,setyl.it/25FJ1P,SC44-22801,30:24.0,30:24.0,RIC,F,,
-3,Silvus 4480 Radio,setyl.it/NN8H4W,SC44-22755,32:24.0,32:24.0,RIC,F,,
+2,Silvus 4480 Radio,setyl.it/25FJ1P,SC44-22801,30:24.0,30:24.0,RIC,T,,
+3,Silvus 4480 Radio,setyl.it/NN8H4W,SC44-22755,32:24.0,32:24.0,RIC,T,,
 4,Silvus 4240 Streamcaster ,setyl.it/DAGZW5,"SC42-44788,B7",35:33.0,35:33.0,RIC,F,,
 5,Silvus 4240 Streamcaster ,setyl.it/FQU35A,"SC42-45065,B7",37:53.7,37:53.7,RIC,F,,
 6,Silvus 4240 Streamcaster ,setyl.it/PUMLAQ,"SC42-44789,B7",39:36.8,39:36.8,RIC,F,,

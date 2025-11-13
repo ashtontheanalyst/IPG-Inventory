@@ -34,12 +34,12 @@
             <button id="sortLocZAbtn" name="sorter" type="button" class="optBtn">Z-A</button>
         </div>
 
-        
+
         <table id="inventory"></table>
 
 
         <!-- This is the input from the scanner, we make it 100% opaque and off the screen hidden -->
-        <input id="scannerInput" type="text" autocomplete="off" tabindex="-1" aria-hidden="true"
+        <input id="scannerInput" type="text" autocomplete="off" tabindex="0"
         style="opacity: 0; position: fixed; left: -9999px; pointer-events: none;">
     </div>
 
@@ -72,7 +72,7 @@
         // Helper function that builds the table itself with data from backend CSV
         function buildTable(data) {
             inventory.innerHTML = "";   // Clear
-            
+
 
             // Headers
             const thead = document.createElement("thead");
@@ -84,7 +84,7 @@
             });
             thead.appendChild(hr);
             inventory.appendChild(thead);
-            
+
 
             // Insert rows of data (items)
             const tbody = document.createElement("tbody");
@@ -105,7 +105,7 @@
             });
             inventory.appendChild(tbody);
         }
-        
+
 
 
 
@@ -156,11 +156,14 @@
 
         // Scanning/inventorying functionality
         async function markPresent(value) {
-            const response = await fetch(`/markPresent?value=${value}`);
+            const response = await fetch(`/markPresent?value=${value}`, {
+                headers: {'Accept': 'application/json'},
+                cache: 'no-store'
+            });
             const data = await response.json();
             buildTable(data);
         }
-        
+
         // Remember, when the scanner scans something, it acts like a keyboard typing in letters
         // super fast. So, we pick up that input here
         scannerInput.addEventListener('keydown', async (event) => {
@@ -208,7 +211,7 @@
             if (e.target.closest('button')) {
                 return;
             }
-            
+
             setTimeout(focusScanner, 0);
         });
 
@@ -217,9 +220,16 @@
             setTimeout(focusScanner, 0);
         });
 
+        // This is for touch screens, resets the focus to the scanner input after you tap
+        document.addEventListener('touchstart', (e) => {
+            if (!e.target.closest('button, a, input, label, select, textarea, [role="button"]')) {
+                setTimeout(focusScanner, 0);
+              }
+        }, {passive: true});
 
 
-        
+
+
         // Build the table once window loads
         window.addEventListener("DOMContentLoaded", getTableData)
     </script>
