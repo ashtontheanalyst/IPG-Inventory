@@ -130,7 +130,7 @@ def markPresent():
 
     # Make the CSV a pandas df, update the value that's been scanned in, write it to the CSV
     df = pd.read_csv("./data/Inventory.csv", dtype=str)
-    df.loc[df["object_code"] == value, "inventoried"] = "TRUE"
+    df.loc[df["object_code"] == value, "inventoried"] = "T"
     df.to_csv("./data/Inventory.csv", index=False)
     
     # Read the newly updated CSV data to be passed to the frontend
@@ -155,7 +155,7 @@ def resetInvCol():
 
     # Make the CSV a pandas df, update all inventoried cells to FALSE, write it to the CSV
     df = pd.read_csv("./data/Inventory.csv", dtype=str)
-    df["inventoried"] = "FALSE"
+    df["inventoried"] = "F"
     df.to_csv("./data/Inventory.csv", index=False)
     
     # Read the newly updated CSV data to be passed to the frontend

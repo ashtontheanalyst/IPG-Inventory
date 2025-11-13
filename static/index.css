@@ -6,11 +6,11 @@ body{
 
 
 #headerBar{
-    position: absolute;
+    position: sticky;
     top: 0;
     left: 0;
     height: 100px;
-    width: 100vw;
+    width: 100%;
     background-color: #500000;
 
     display: flex;
@@ -63,6 +63,13 @@ body{
     color: white;
 }
 
+.headerBtn.flashSuccess{
+    background-color: rgb(183, 241, 183);
+    color: rgb(27, 57, 27);
+    box-shadow: 0px 0px 5px rgb(183, 241, 183);
+    transition: 0.1s ease;
+}
+
 #ResetInvBtn:hover{
     background-color: #ffc2c2;
     color: #c10a0a;
@@ -80,9 +87,7 @@ body{
 
 
 #main{
-    position: absolute;
-    top: 100px;
-    left: 0;
+    position: static;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -195,10 +200,15 @@ td:first-child{
 }
 
 /*Gives the table one after another coloring, stripes*/
-tr:nth-child(even) {
+tbody tr:nth-child(even) {
     background-color: hsl(0, 0%, 96%);
 }
 
-tr:nth-child(odd) {
+tbody tr:nth-child(odd) {
     background-color: hsl(0, 0%, 100%);
+}
+
+/*Select any row with the class assignment, then change the cell colors to green (for 2062)*/
+tr.inventoriedRow td{
+    background-color: rgb(183, 241, 183);
 }

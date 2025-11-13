@@ -14,7 +14,7 @@
         <div id="headerBtnCont">
             <button id="ResetInvBtn" type="button" onclick="resetInvCol()" class="headerBtn">Reset</button>
             <button type="button" class="headerBtn">*2062*</button>
-            <a href="/scannerHelp" class="headerBtn">Scanner</a>
+            <a href="/scannerHelp" class="headerBtn" id="scannerBtn">Scanner</a>
             <!--More buttons here-->
         </div>
     </div>
@@ -29,7 +29,7 @@
             <label class="locBtn"><input type="radio" name="option" value="RIC" id="RICbtn" hidden>RIC</label>
             <label class="locBtn"><input type="radio" name="option" value="OTA" id="OTAbtn" hidden>OTA</label>
             <label class="locBtn"><input type="radio" name="option" value="MCC" id="MCCbtn" hidden>MCC</label>
-            
+
             <button id="sortLocAZbtn" name="sorter" type="button" class="optBtn">A-Z</button>
             <button id="sortLocZAbtn" name="sorter" type="button" class="optBtn">Z-A</button>
         </div>
@@ -51,6 +51,7 @@
         const RICbtn = document.getElementById("RICbtn");
         const OTAbtn = document.getElementById("OTAbtn");
         const MCCbtn = document.getElementById("MCCbtn");
+        const scannerBtn = document.getElementById("scannerBtn");
 
         const inventory = document.getElementById("inventory");
         const scannerInput = document.getElementById("scannerInput");
@@ -71,11 +72,12 @@
         // Helper function that builds the table itself with data from backend CSV
         function buildTable(data) {
             inventory.innerHTML = "";   // Clear
+            
 
             // Headers
             const thead = document.createElement("thead");
             const hr = document.createElement("tr");
-            ["Item", "Serial", "Code", "Location", "Inventoried?"].forEach((val) => {
+            ["Item", "S/N", "LOC", "INV"].forEach((val) => {
                 const th = document.createElement("th");
                 th.textContent = val;
                 hr.appendChild(th);
@@ -91,9 +93,14 @@
                 const tr = document.createElement("tr");
                 tr.insertCell(0).textContent = item.name;
                 tr.insertCell(1).textContent = item.serial;
-                tr.insertCell(2).textContent = item.code;
-                tr.insertCell(3).textContent = item.location;
-                tr.insertCell(4).textContent = item.inventoried;
+                tr.insertCell(2).textContent = item.location;
+                tr.insertCell(3).textContent = item.inventoried;
+
+                // This highlights the items that are inventoried, lights up the row
+                if (item.inventoried == "T") {
+                    tr.classList.add("inventoriedRow"); // CSS defines the class
+                }
+
                 tbody.appendChild(tr);
             });
             inventory.appendChild(tbody);
@@ -162,6 +169,10 @@
                 // Mark that the item has been inventoried in the backend csv
                 const value = scannerInput.value.trim();
                 await markPresent(value);
+
+                // To show a successful scan/item grab, we change the btn class to flash, wait, then reset the style
+                scannerBtn.classList.add('flashSuccess');
+                setTimeout(() => scannerBtn.classList.remove('flashSuccess'), 200);
 
                 // Clear the scanner input
                 scannerInput.value = "";
