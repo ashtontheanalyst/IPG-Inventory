@@ -19,7 +19,6 @@ def get_inventory_items(project_name):
     return [row for _, row in df[(df["inventoried"] == "TRUE")].iterrows()]
 
 def prepare_page_data(category_groups, page_type="first"):
-    print("preparing data...")
     data = {}
 
     if page_type == "first" and category_groups:
@@ -57,7 +56,6 @@ def prepare_page_data(category_groups, page_type="first"):
     return data
 
 def generate_and_combine_pdfs(project_name, page_data):
-    print("combining...")
     input_first_page = Path("pdfs/AnnexE.pdf")
     input_continuation_page = Path("pdfs/AnnexE_ContinuationPage.pdf")
     output_pdfs = []
@@ -77,19 +75,14 @@ def generate_and_combine_pdfs(project_name, page_data):
     return final_pdf
 
 def generate_pdf(project_name):
-    print("generating...")
     df = pd.read_csv(CSV_PATH, dtype=str)
     inventory_items = df[(df["inventoried"] == "TRUE")]
 
     # Group by category
     grouped = inventory_items.groupby("category_name")
-    print("grouped:::")
     print(grouped)
-    print("")
     category_groups = [{"category": cat, "items": items.to_dict("records")} for cat, items in grouped]
-    print("Cat groups::::")
     print(category_groups)
-    print("")
     # Pagination
     pages = []
     current_page = []
@@ -116,6 +109,5 @@ def generate_pdf(project_name):
     page_data = [prepare_page_data(pg, page_type="first" if i == 0 else "continuation") for i, pg in enumerate(pages)]
     final_pdf = generate_and_combine_pdfs(project_name, page_data)
 
-    print("Done combining")
 
     return final_pdf
