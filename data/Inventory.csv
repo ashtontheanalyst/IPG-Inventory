@@ -10,7 +10,7 @@ id,category_name,object_code,serial_number,created_at,updated_at,location,invent
 10,Silvus Battery,setyl.it/LE1AEL,52604,46:51.1,46:51.1,RIC,FALSE,,
 11,Silvus Battery Connector,setyl.it/GV87AN,,56:40.5,56:40.5,RIC,FALSE,,
 12,Silvus Antenna S-Band H,setyl.it/B27B5B,NR02523,54:39.3,54:39.3,RIC,FALSE,,
-13,Silvus Antenna S-Band H	,setyl.it/11PBKZ,NR02514,56:07.0,56:07.0,RIC,TRUE,,
+13,Silvus Antenna S-Band H,setyl.it/11PBKZ,NR02514,56:07.0,56:07.0,RIC,TRUE,,
 14,Silvus Antenna S-Band H,setyl.it/BS00QF,NR02515,57:29.1,57:29.1,RIC,TRUE,,
 15,Silvus Antenna S-Band H,setyl.it/GKVM9R,NR02516,58:31.3,58:31.3,RIC,FALSE,,
 16,Silvus Antenna S-Band V,setyl.it/PATSJ1,NR02016,59:37.0,59:37.0,RIC,FALSE,,

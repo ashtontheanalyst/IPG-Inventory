@@ -30,6 +30,7 @@ def prepare_page_data(category_groups, page_type="first"):
     index = 0
     for group in category_groups:
         category = group["category"]
+        print(category)
         items_in_category = group["items"]
 
         # Collect all serial numbers for this category
@@ -82,8 +83,13 @@ def generate_pdf(project_name):
 
     # Group by category
     grouped = inventory_items.groupby("category_name")
+    print("grouped:::")
+    print(grouped)
+    print("")
     category_groups = [{"category": cat, "items": items.to_dict("records")} for cat, items in grouped]
-
+    print("Cat groups::::")
+    print(category_groups)
+    print("")
     # Pagination
     pages = []
     current_page = []
