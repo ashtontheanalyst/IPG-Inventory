@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Item Info Page</title>
+    <link rel="stylesheet" href="../static/index.css"><!--CSS-->
+</head>
+<body>
+    <!--Header-->
+    <div id="headerBar">
+        <a href="/" style="text-decoration: none;"><h1>IPG Inventory</h1></a>
+
+        <div id="headerBtnCont">
+            <button id="ResetInvBtn" type="button" onclick="resetInvCol()" class="headerBtn">Reset</button>
+            <button type="button" class="headerBtn">*2062*</button>
+            <a href="/scannerHelp" class="headerBtn" id="scannerBtn">Scanner</a>
+            <a href="/info" class="headerBtn" id="infoBtn">Info</a>
+            <!--More buttons here-->
+        </div>
+    </div>
+
+    <div id="itemInfoCont">
+        <h1 id="itemInfoh1">Item Information:</h1>
+        <p id="itemInfopre">Scan an item's barcode to see it's full information.</p>
+    </div>
+
+    <!--Scanner input-->
+    <input id="scannerInput" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" tabindex="0"
+        style="position: fixed; bottom: 0; left: 0; width: 1px; height: 1px; opacity: 0.01; z-index: 9999; border: none; color: transparent; caret-color: transparent;">
+
+
+
+
+    <script>
+        const scannerInput = document.getElementById("scannerInput");
+        const scannerBtn = document.getElementById("scannerBtn");
+
+        const itemInfoh1 = document.getElementById("itemInfoh1");
+        const itemInfopre = document.getElementById("itemInfopre");
+
+
+        // Gets the info and displays on the screen after we scan an item
+        async function getItemInfo(value) {
+            const response = await fetch(`/getItemInfo?value=${value}`);
+            const data = await response.json();
+
+            itemInfoh1.textContent = data.item[0].name;
+            itemInfopre.textContent =
+                `S/N      = ${data.item[0].serial}\n` +
+                `Location = ${data.item[0].location}\n` +
+                `Code     = ${data.item[0].code}`;
+        }
+
+        // Capture scanner input
+        scannerInput.addEventListener('keydown', async (event) => {
+            if (event.key === "Enter") {
+                // Mark that the item has been inventoried in the backend csv
+                const value = scannerInput.value.trim();
+                await getItemInfo(value);
+
+                // To show a successful scan/item grab, we change the btn class to flash, wait, then reset the style
+                scannerBtn.classList.add('flashSuccess');
+                setTimeout(() => scannerBtn.classList.remove('flashSuccess'), 200);
+
+                // Clear the scanner input
+                scannerInput.value = "";
+            }
+        });
+
+
+
+
+        // For scanner
+        // Helper function to bring focus back to the scannerinput
+        function focusScanner() {
+            if (document.activeElement !== scannerInput) {
+                scannerInput.focus();
+            }
+        }
+
+        // Events to fire helper
+        window.addEventListener("load", focusScanner);      // When the page loads
+        window.addEventListener("focus", focusScanner);     // When you come back to the page
+        document.addEventListener("mousedown", (e) => {      // Mouse click
+            // This makes sure we can interact with say a button and not get interrupted
+            if (e.target.closest('button')) {
+                return;
+            }
+
+            setTimeout(focusScanner, 0);
+        });
+
+        // Reset focus after we click on something on screen
+        document.addEventListener("click", () => {
+            setTimeout(focusScanner, 0);
+        });
+
+        // This is for touch screens, resets the focus to the scanner input after you tap
+        document.addEventListener('touchstart', (e) => {
+            if (!e.target.closest('button, a, input, label, select, textarea, [role="button"]')) {
+                setTimeout(focusScanner, 0);
+              }
+        });
+    </script>
+</body>
+</html>

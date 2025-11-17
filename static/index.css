@@ -1,0 +1,249 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+
+#headerBar{
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 100px;
+    width: 100%;
+    background-color: #500000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /*Puts h1 on the left and btncont on the right*/
+}
+
+#headerBar h1{
+    margin: 0;
+    margin-left: 2vw;
+    font-size: 2.5em;
+    color: white;
+}
+
+#headerBtnCont{
+    flex-direction: row-reverse;
+    display: flex;
+    align-items: center;
+    margin-right: 4vw;
+    gap: 2vw;
+    height: 100%;
+    width: auto;
+}
+
+.headerBtn{
+    text-decoration: none;
+    width: 100px;
+    height: 50px;
+    background-color: white;
+    color: black;
+    font-size: 1.25em;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    /*Align text*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerBtn:hover{
+    background-color: rgb(210, 210, 210);
+    transition: 0.1s;
+}
+
+.headerBtn:active{
+    background-color: black;
+    color: white;
+}
+
+.headerBtn.flashSuccess{
+    background-color: rgb(183, 241, 183);
+    color: rgb(27, 57, 27);
+    box-shadow: 0px 0px 5px rgb(183, 241, 183);
+    transition: 0.1s ease;
+}
+
+#ResetInvBtn:hover{
+    background-color: #ffc2c2;
+    color: #c10a0a;
+    transition: 0.1s;
+}
+
+#ResetInvBtn:active{
+    font-size: 1.5em;
+    background-color: #c10a0a;
+    color: white;
+    transition: 0.1s;
+}
+
+
+
+
+#main{
+    position: static;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin: 0;
+    gap: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#optBtnsCont{
+    margin-top: 30px;
+}
+
+.optBtn{
+    padding: 15px 20px;
+    font-size: 1.25em;
+    cursor: pointer;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    box-shadow: 0px 0px 5px hsl(0, 0%, 90%);
+}
+
+.locBtn{
+    padding: 15px 20px;
+    font-size: 1.25em;
+    cursor: pointer;
+    margin-left: 5px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e2e2fb;
+    color: black;
+    font-weight: bold;
+    box-shadow: 0px 0px 5px hsl(0, 0%, 90%);
+}
+
+.locBtn:hover{
+    background-color: #bcbbf6;
+    transition: 0.1s;
+}
+
+.locBtn:active{
+    background-color: #1d1c53;
+    color: white;
+    transition: 0.1s;
+}
+
+/*Changes the background of the location btn/radio selected*/
+.locBtn:has(input:checked) {
+    background-color: #1d1c53;
+    color: white;
+}
+
+#sortLocAZbtn, #sortLocZAbtn{
+    background-color: #bad8f5;
+}
+
+#sortLocAZbtn:hover, #sortLocZAbtn:hover{
+    background-color: #86c0f6;
+    transition: 0.1s;
+}
+
+#sortLocAZbtn:active, #sortLocZAbtn:active{
+    background-color: #0b2f51;
+    color: white;
+    transition: 0.1s;
+}
+
+
+
+
+/*Everything apart of the table*/
+table, th, td{
+    border: 1px solid black;
+    border-collapse: collapse;
+    vertical-align: middle;
+    max-width: 1000px;
+    align-self: center;
+}
+
+/*Just the table, like the outside*/
+table{
+    box-shadow: 0px 0px 20px hsl(0, 0%, 90%);
+    display: block;
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+/*This is the table header row/cells*/
+th{
+    background-color: black;
+    color: white;
+    padding: 5px;
+    font-size: 1.5em;
+}
+
+/*This is the table body columns/cells*/
+td{
+    text-align: center;
+    font-size: 1em;
+    padding: 4px;
+}
+
+/*Controls the first column in the body (not the header cell)*/
+td:first-child{
+    text-align: left;
+}
+
+/*Gives the table one after another coloring, stripes*/
+tbody tr:nth-child(even) {
+    background-color: hsl(0, 0%, 96%);
+}
+
+tbody tr:nth-child(odd) {
+    background-color: hsl(0, 0%, 100%);
+}
+
+/*Select any row with the class assignment, then change the cell colors to green (for 2062)*/
+tr.inventoriedRow td{
+    background-color: rgb(183, 241, 183);
+}
+
+
+
+
+/*This is for the info.html Page*/
+#itemInfoCont {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 5% 5%;
+    border: none;
+    border-radius: 5px;
+    background-color: #500000;
+    color: white;
+}
+
+#itemInfoCont h1{
+    font-size: 3em;
+    margin: 0;
+    padding: 0;
+}
+
+#itemInfoCont p{
+    font-size: 1.25em;
+    font-family: Arial, Helvetica, sans-serif;
+    white-space: pre-line;
+    margin: 0;
+    margin-top: 10%;
+    padding: 0;
+}
