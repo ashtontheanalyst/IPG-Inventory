@@ -53,6 +53,13 @@ light up green but the row of the item's background wouldn't change or show that
 scanned. The issue was the the scannerInput element had to get some styling changes so that
 Safari wouldn't siable it as "insecure"
 
+**11/14/25**
+- Fixed home page return button
+
+**11/17/25 Jeremy**
+- Primary: 2062 creator
+- Fix home button to be more intuitive, right now it's just text "IPG Inventory"
+- Make CSS cleaner for smaller screens (mobile)
 
 ## Ideas
 1. Convert Ethan's Ruby on Rails application to a Python Flask application
