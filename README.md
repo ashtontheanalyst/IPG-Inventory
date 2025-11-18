@@ -71,6 +71,10 @@ of the last time it was seen.
 - Fixed bug where selecting the "Seen" or "Maint" button would reset the location back to
 all of them instead of the current location the user had truly selected.
 
+**11/18/25**
+- Tried bringing in the 2062 generator but was not compatible with the pre-exisiting code/system,
+need to figure out how to fix that and get it operational
+
 ## Ideas
 1. **[DONE]** Convert Ethan's Ruby on Rails application to a Python Flask application
 2. **[DONE]** Fix the hosting problem by hosting the Flask application on pythonanywhere with a 

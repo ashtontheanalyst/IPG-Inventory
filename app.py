@@ -40,7 +40,7 @@ def pullDataCSV(location=None, lastSeen=False, maint=False):
     with open(DATA_CSV, newline="", encoding="utf-8") as csvfile:
         csvinv = csv.DictReader(csvfile)
         for row in csvinv:
-            if location is not None and row["location"] != location:
+            if location is not None and location != "Location" and row["location"] != location:
                 continue
 
             # Every table to be displayed will have these three columns
