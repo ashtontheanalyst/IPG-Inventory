@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request, jsonify, redirect
+from flask import Flask, render_template, request, jsonify, send_file
 import pandas as pd
 import csv
 from pathlib import Path
+import time
 
 
 # Init app
@@ -10,9 +11,6 @@ app = Flask(__name__)
 # Entire inventory CSV df
 BASE_DIR = Path(__file__).resolve().parent
 DATA_CSV = BASE_DIR / "data" / "Inventory.csv"
-
-# inventory
-inventory = []
 
 
 
@@ -33,22 +31,58 @@ def scannerHelp():
 
 
 
-@app.route("/getTable")
-def getTable():
-    inventory = []
+# Helper function for pulling from the CSV
+def pullDataCSV(location=None, lastSeen=False, maint=False):
+    items = []
 
-    # Pulls the data from the csv file, updates the global inventory array as an array of dicts with each
-    # item row, then sends it to the front end to make it a table
+    # Opens the CSV file with inventory data, goes row by row pulling out each
+    # items specifics based on passed in arguments to this helper function
     with open(DATA_CSV, newline="", encoding="utf-8") as csvfile:
         csvinv = csv.DictReader(csvfile)
         for row in csvinv:
-            inventory.append({
+            if location is not None and row["location"] != location:
+                continue
+
+            # Every table to be displayed will have these three columns
+            item = {
                 "name": row["category_name"],
                 "serial": row["serial_number"],
-                "code": row["object_code"],
                 "location": row["location"],
                 "inventoried": row["inventoried"]
-            })
+            }
+
+            # These are our optional add ons that get button selected by the user
+            if lastSeen:
+                item["lastSeen"] = row.get("last_seen")
+            
+            if maint:
+                item["maintenance"] = row.get("maintenance")
+
+            # append each item to the items list
+            items.append(item)
+
+    return items
+
+
+@app.route("/getTable")
+def getTable():
+    inventory = pullDataCSV()
+
+    return jsonify({"status": "ok", "items": inventory})
+
+
+@app.route("/getTableLastSeen")
+def getTableLastSeen():
+    location = request.args.get("location")
+    inventory = pullDataCSV(location=location, lastSeen=True)
+
+    return jsonify({"status": "ok", "items": inventory})
+
+
+@app.route("/getTableMaintenance")
+def getTableMaintenance():
+    location = request.args.get("location")
+    inventory = pullDataCSV(location=location, maint=True)
 
     return jsonify({"status": "ok", "items": inventory})
 
@@ -59,32 +93,13 @@ def sortTable():
     direction = request.args.get("direction")   # Get direction A:ascending or D:decending
     location = request.args.get("location")     # Pull the location for sorting
 
-    inventory = []  # Clear
-
-    if location == "ALL":
-        with open(DATA_CSV, newline="", encoding="utf-8") as csvfile:
-            csvinv = csv.DictReader(csvfile)
-            for row in csvinv:
-                inventory.append({
-                    "name": row["category_name"],
-                    "serial": row["serial_number"],
-                    "code": row["object_code"],
-                    "location": row["location"],
-                    "inventoried": row["inventoried"]
-                })
+    # Use our helper function to pull inventory
+    if location == "Location":
+        inventory = pullDataCSV()
     else:
-        with open(DATA_CSV, newline="", encoding="utf-8") as csvfile:
-            csvinv = csv.DictReader(csvfile)
-            for row in csvinv:
-                if row["location"] == location: # This is the line change for location
-                    inventory.append({
-                        "name": row["category_name"],
-                        "serial": row["serial_number"],
-                        "code": row["object_code"],
-                        "location": row["location"],
-                        "inventoried": row["inventoried"]
-                    })
+        inventory = pullDataCSV(location=location)
 
+    # Sort the inv based on asc/desc
     if direction == "A":
         inventory = sorted(inventory, key=lambda x: x["name"])
     elif direction == "D":
@@ -98,23 +113,10 @@ def sortTable():
 def filterTable():
     location = request.args.get("location")
 
-    inventory = []  # Clear
-
-    if location != "ALL":
-        with open(DATA_CSV, newline="", encoding="utf-8") as csvfile:
-            csvinv = csv.DictReader(csvfile)
-            for row in csvinv:
-                if row["location"] == location:
-                    inventory.append({
-                        "name": row["category_name"],
-                        "serial": row["serial_number"],
-                        "code": row["object_code"],
-                        "location": row["location"],
-                        "inventoried": row["inventoried"]
-                    })
+    if location == "Location":
+        inventory = pullDataCSV()
     else:
-        # Default table with items at all locations
-        return redirect("/getTable")
+        inventory = pullDataCSV(location=location)
 
 
     return jsonify({"status": "ok", "items": inventory})
@@ -125,25 +127,17 @@ def filterTable():
 # Marking an item present in the CSV based on scan from frontend
 @app.route("/markPresent")
 def markPresent():
-    inventory = []
     value = request.args.get("value")
+    currentTimeFormatted = f"{time.localtime().tm_mon}/{time.localtime().tm_mday}/{time.localtime().tm_year}"
 
     # Make the CSV a pandas df, update the value that's been scanned in, write it to the CSV
     df = pd.read_csv(DATA_CSV, dtype=str)
     df.loc[df["object_code"] == value, "inventoried"] = "T"
+    df.loc[df["object_code"] == value, "last_seen"] = currentTimeFormatted     # This is the last time the item was scanned in
     df.to_csv(DATA_CSV, index=False)
 
     # Read the newly updated CSV data to be passed to the frontend
-    with open(DATA_CSV, newline="", encoding="utf-8") as csvfile:
-        csvinv = csv.DictReader(csvfile)
-        for row in csvinv:
-            inventory.append({
-                "name": row["category_name"],
-                "serial": row["serial_number"],
-                "code": row["object_code"],
-                "location": row["location"],
-                "inventoried": row["inventoried"]
-            })
+    inventory = pullDataCSV(lastSeen=True)
 
     return jsonify({"status": "ok", "items": inventory})
 
@@ -158,17 +152,9 @@ def resetInvCol():
     df["inventoried"] = "F"
     df.to_csv(DATA_CSV, index=False)
 
-    # Read the newly updated CSV data to be passed to the frontend
-    with open(DATA_CSV, newline="", encoding="utf-8") as csvfile:
-        csvinv = csv.DictReader(csvfile)
-        for row in csvinv:
-            inventory.append({
-                "name": row["category_name"],
-                "serial": row["serial_number"],
-                "code": row["object_code"],
-                "location": row["location"],
-                "inventoried": row["inventoried"]
-            })
+    # Read the newly updated CSV data to be passed to the frontend, we put the params to true
+    # just in case the user has those columns open, we don't want data just disappearing
+    inventory = pullDataCSV(lastSeen=True, maint=True)
 
     return jsonify({"status": "ok", "items": inventory})
 
@@ -187,6 +173,7 @@ def getItemInfo():
 
     item = []
 
+    # This one can stay and not be in the helper function since it just pulls one item
     with open(DATA_CSV, newline="", encoding="utf-8") as csvfile:
         csvinv = csv.DictReader(csvfile)
         for row in csvinv:
@@ -200,6 +187,14 @@ def getItemInfo():
                 })
 
     return jsonify({"status": "ok", "item": item})
+
+
+
+
+# Generating the PDF
+@app.route("/generatepdf")
+def generate_pdf_route():
+    return "hello"
 
 
 

@@ -4,9 +4,9 @@ more specifically the Innovation Proving Ground team.
 
 
 ## Capabilities
-1. Compare the inventory that is scanned in versus a master list of all items. From there
+1. **[DONE]** Compare the inventory that is scanned in versus a master list of all items. From there
 the application should show the end user what item(s) are missing and at what location.
-2. Rm.342 is priority for scanning items in/out, then we can expand to the OTA, OTA shed,
+2. **[DONE]** Rm.342 is priority for scanning items in/out, then we can expand to the OTA, OTA shed,
 MCC, and MCC shed, etc.
 3. Lofty goal is to have a notification system (most likely an email bot) that informs 
 certain users when an item needs to be maintained, updated, patched, or etc.
@@ -57,15 +57,32 @@ Safari wouldn't siable it as "insecure"
 - Fixed home page return button
 
 **11/17/25 Jeremy**
-- Primary: 2062 creator
-- Fix home button to be more intuitive, right now it's just text "IPG Inventory"
-- Make CSS cleaner for smaller screens (mobile)
+- Unconfirmed: 2062 generator complete to standard, he noticed the time was slow 20-30s per pdf gen
+
+**11/17/25**
+- Made the location and sort button toggle state btns (more concise for smaller screens)
+- Created the "lastSeenBtn" which is a toggle on/off btn. The functionality will be that
+when it's "on"/selected, it'll populate another column on the table showing the date/time of
+when it was last scanned by the scanner.
+- Made the same type of button that will show dates when things need to be maintained.
+- Helper function in app.py made to read the CSV file based on different options/params.
+- Scanning an item now logs the date that it happened in the CSV so that we can keep track
+of the last time it was seen.
+- Fixed bug where selecting the "Seen" or "Maint" button would reset the location back to
+all of them instead of the current location the user had truly selected.
 
 ## Ideas
-1. Convert Ethan's Ruby on Rails application to a Python Flask application
-2. Fix the hosting problem by hosting the Flask application on pythonanywhere with a 
+1. **[DONE]** Convert Ethan's Ruby on Rails application to a Python Flask application
+2. **[DONE]** Fix the hosting problem by hosting the Flask application on pythonanywhere with a 
 username/password
 3. The main inventory page can save a temp csv with all of the items that have been scanned
 so that we can have a button that says 'Build 2062' and then it builds it with the saved list
-4. Set the scanner to bluetooth mode, and make a separate page with the barcodes for configuring
+4. **[DONE]** Set the scanner to bluetooth mode, and make a separate page with the barcodes for configuring
 the scanner/how to use it (help page)
+5. _(IN-PROG)_ Log for when maintenance was completed
+6. _(IN-PROG)_ Add a column with the maintenance date or window and then the cell per item can be clicked
+to check off that mainentnance has been done (this is what would be logged), color code it
+7. **[DONE]** Maybe another column that is like a "last seen" column, it checks to see when the item was
+last scanned in, this is the true inventory
+8. **[DONE]** Change the location and A-Z/Z-A buttons to be positional buttons to clear up the screen,
+as you click them their value changes through a series

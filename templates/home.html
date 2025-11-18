@@ -13,7 +13,7 @@
 
         <div id="headerBtnCont">
             <button id="ResetInvBtn" type="button" onclick="resetInvCol()" class="headerBtn">Reset</button>
-            <button type="button" class="headerBtn">*2062*</button>
+            <button id="generatePDFBtn" type="button" class="headerBtn" onclick="generatePDF()">2062</button>
             <a href="/scannerHelp" class="headerBtn" id="scannerBtn">Scanner</a>
             <a href="/info" class="headerBtn" id="infoBtn">Info</a>
             <!--More buttons here-->
@@ -23,16 +23,15 @@
 
     <div id="main">
         <div id="optBtnsCont">
-            <!-- Radio buttons for location of the item, when selected it will filter the table,
-            default behavior is to show all items. The name option makes only one btn selectable
-            at a time, no multi-select it wouldn't make sense -->
-            <label class="locBtn"><input type="radio" name="option" value="ALL" id="ALLbtn" checked hidden>ALL</label>
-            <label class="locBtn"><input type="radio" name="option" value="RIC" id="RICbtn" hidden>RIC</label>
-            <label class="locBtn"><input type="radio" name="option" value="OTA" id="OTAbtn" hidden>OTA</label>
-            <label class="locBtn"><input type="radio" name="option" value="MCC" id="MCCbtn" hidden>MCC</label>
+            <!--Location btn, goes from Location, to RIC, to OTA, to MCC, then back-->
+            <button id="filterLocBtn" type="button" class="optBtn" onclick="filterLocBtnToggle()"></button>
 
-            <button id="sortLocAZbtn" name="sorter" type="button" class="optBtn">A-Z</button>
-            <button id="sortLocZAbtn" name="sorter" type="button" class="optBtn">Z-A</button>
+            <!--Sort name A-Z then Z-A-->
+            <button id="sortNameBtn" type="button" class="optBtn" onclick="sortNameBtnToggle()"></button>
+
+            <!--This button adds the last seen column to the table (toggelable)-->
+            <button id="lastSeenBtn" type="button" class="optBtn" value="unselected" onclick="lastSeenBtnToggle()">Seen</button>
+            <button id="maintBtn" type="button" class="optBtn" value="unselected" onclick="maintBtnToggle()">Maint</button>
         </div>
 
 
@@ -43,196 +42,315 @@
         <input id="scannerInput" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" tabindex="0"
         style="position: fixed; bottom: 0; left: 0; width: 1px; height: 1px; opacity: 0.01; z-index: 9999; border: none; color: transparent; caret-color: transparent;">
     </div>
-
-
-
-
-    <script>
-        const ALLbtn = document.getElementById("ALLbtn");
-        const RICbtn = document.getElementById("RICbtn");
-        const OTAbtn = document.getElementById("OTAbtn");
-        const MCCbtn = document.getElementById("MCCbtn");
-        const scannerBtn = document.getElementById("scannerBtn");
-
-        const inventory = document.getElementById("inventory");
-        const scannerInput = document.getElementById("scannerInput");
-
-
-
-
-        // This is what loads on initial visiting the home page, pulls inventory CSV to frontend then passes
-        // it to the build table func
-        async function getTableData() {
-            const response = await fetch(`/getTable`);
-            const data = await response.json();
-
-            // Helper function to build table
-            buildTable(data);
-        }
-
-        // Helper function that builds the table itself with data from backend CSV
-        function buildTable(data) {
-            inventory.innerHTML = "";   // Clear
-
-
-            // Headers
-            const thead = document.createElement("thead");
-            const hr = document.createElement("tr");
-            ["Item", "S/N", "LOC", "INV"].forEach((val) => {
-                const th = document.createElement("th");
-                th.textContent = val;
-                hr.appendChild(th);
-            });
-            thead.appendChild(hr);
-            inventory.appendChild(thead);
-
-
-            // Insert rows of data (items)
-            const tbody = document.createElement("tbody");
-            data.items.forEach((item) => {
-                // This builds each individual row and appends to the body which appends to the table
-                const tr = document.createElement("tr");
-                tr.insertCell(0).textContent = item.name;
-                tr.insertCell(1).textContent = item.serial;
-                tr.insertCell(2).textContent = item.location;
-                tr.insertCell(3).textContent = item.inventoried;
-
-                // This highlights the items that are inventoried, lights up the row
-                if (item.inventoried == "T") {
-                    tr.classList.add("inventoriedRow"); // CSS defines the class
-                }
-
-                tbody.appendChild(tr);
-            });
-            inventory.appendChild(tbody);
-        }
-
-
-
-
-        // Sort the table/items A-Z or Z-A
-        async function sortTable(direction, location) {
-            const response = await fetch(`/sortTable?direction=${direction}&location=${location}`);
-            const data = await response.json();
-            buildTable(data);
-        }
-
-        // Apply to both sort buttons
-        document.querySelectorAll('button[name="sorter"]').forEach(button => {
-            // Based on A-Z or Z-A
-            button.addEventListener('click', (btn) => {
-                let direction = btn.target.innerHTML;
-                let location = document.querySelector('input[name="option"]:checked').value;
-
-                if (direction == "A-Z") {
-                    sortTable("A", location);
-                }
-                else if (direction == "Z-A") {
-                    sortTable("D", location);
-                }
-            });
-        });
-
-
-
-
-        // Filters the item in the table based on location you specify on btn press
-        async function filterTable(location) {
-            const response = await fetch(`/filterTable?location=${location}`);
-            const data = await response.json();
-            buildTable(data);
-        }
-
-        // Applies to all location radio buttons
-        document.querySelectorAll('input[name="option"]').forEach(radio => {
-            // Call this function when clicked, we want a filtered table
-            radio.addEventListener('click', (btn) => {
-                let location = btn.target.value;
-                filterTable(location);
-            });
-        });
-
-
-
-
-        // Scanning/inventorying functionality
-        async function markPresent(value) {
-            const response = await fetch(`/markPresent?value=${value}`, {
-                headers: {'Accept': 'application/json'},
-                cache: 'no-store'
-            });
-            const data = await response.json();
-            buildTable(data);
-        }
-
-        // Remember, when the scanner scans something, it acts like a keyboard typing in letters
-        // super fast. So, we pick up that input here
-        scannerInput.addEventListener('keydown', async (event) => {
-            // When the scanner is done scanning, it clicks enter
-            if (event.key === "Enter") {
-                // Mark that the item has been inventoried in the backend csv
-                const value = scannerInput.value.trim();
-                await markPresent(value);
-
-                // To show a successful scan/item grab, we change the btn class to flash, wait, then reset the style
-                scannerBtn.classList.add('flashSuccess');
-                setTimeout(() => scannerBtn.classList.remove('flashSuccess'), 200);
-
-                // Clear the scanner input
-                scannerInput.value = "";
-            }
-        });
-
-
-        // Resets the inventoried column to all "FALSE" values
-        async function resetInvCol() {
-            const response = await fetch(`/resetInvCol`);
-            const data = await response.json();
-            buildTable(data);
-
-            // Since this is a reset, I also select the 'ALL' btn for location
-            ALLbtn.checked = true;
-        }
-
-
-
-
-        // Helper function to bring focus back to the scannerinput
-        function focusScanner() {
-            if (document.activeElement !== scannerInput) {
-                scannerInput.focus();
-            }
-        }
-
-        // Events to fire helper
-        window.addEventListener("load", focusScanner);      // When the page loads
-        window.addEventListener("focus", focusScanner);     // When you come back to the page
-        document.addEventListener("mousedown", (e) => {      // Mouse click
-            // This makes sure we can interact with say a button and not get interrupted
-            if (e.target.closest('button')) {
-                return;
-            }
-
-            setTimeout(focusScanner, 0);
-        });
-
-        // Reset focus after we click on something on screen
-        document.addEventListener("click", () => {
-            setTimeout(focusScanner, 0);
-        });
-
-        // This is for touch screens, resets the focus to the scanner input after you tap
-        document.addEventListener('touchstart', (e) => {
-            if (!e.target.closest('button, a, input, label, select, textarea, [role="button"]')) {
-                setTimeout(focusScanner, 0);
-              }
-        });
-
-
-
-
-        // Build the table once window loads
-        window.addEventListener("DOMContentLoaded", getTableData)
-    </script>
 </body>
 </html>
+
+<!--This is the main site logic-->
+<script>
+    const scannerBtn = document.getElementById("scannerBtn");
+    const inventory = document.getElementById("inventory");
+    const scannerInput = document.getElementById("scannerInput");
+
+
+    // Default values for toggle buttons (value changes as you click it)
+    const sortNameBtn = document.getElementById("sortNameBtn");
+    const filterLocBtn = document.getElementById("filterLocBtn");
+    const lastSeenBtn = document.getElementById("lastSeenBtn");
+    let lastSeenToggle = false;       // This toggles on or off to determine if it's shown on the table
+    const maintBtn = document.getElementById("maintBtn");
+    let maintToggle = false;    // Same idea as above but shows maintenance date
+    const generatePDFBtn = document.getElementById("generatePDFBtn");
+    sortNameBtn.innerHTML = "Sort";
+    filterLocBtn.innerHTML = "Location";
+
+
+
+
+    // This is what loads on initial visiting the home page, pulls inventory CSV to frontend then passes
+    // it to the build table func
+    async function getTableData() {
+        const response = await fetch(`/getTable`);
+        const data = await response.json();
+
+        // Helper function to build table
+        buildTable(data);
+    }
+
+    // Helper function that builds the table itself with data from backend CSV
+    function buildTable(data) {
+        inventory.innerHTML = "";   // Clear
+
+        // Headers
+        const thead = document.createElement("thead");
+        const hr = document.createElement("tr");
+        let headers = ["Item", "S/N", "LOC", "INV"];    // Base
+
+        // Extras if selected
+        if (lastSeenToggle) {
+            headers.push("Last");
+        }
+        if (maintToggle) {
+            headers.push("Maint Due");
+        }
+        
+        headers.forEach((val) => {
+            const th = document.createElement("th");
+            th.textContent = val;
+            hr.appendChild(th);
+        });
+        thead.appendChild(hr);
+        inventory.appendChild(thead);
+
+
+        // Adding our rows (items)
+        const tbody = document.createElement("tbody");
+        data.items.forEach((item) => {
+            // This builds each individual row and appends to the body which appends to the table
+            const tr = document.createElement("tr");
+            tr.insertCell(0).textContent = item.name;
+            tr.insertCell(1).textContent = item.serial;
+            tr.insertCell(2).textContent = item.location;
+            tr.insertCell(3).textContent = item.inventoried;
+
+            // Our optionals
+            if (maintToggle) {
+                tr.insertCell(4).textContent = item.maintenance;
+            } else if (lastSeenToggle) {
+                tr.insertCell(4).textContent = item.lastSeen;
+            }
+
+            // This highlights the items that are inventoried, lights up the row
+            if (item.inventoried == "T") {
+                tr.classList.add("inventoriedRow"); // CSS defines the class
+            }
+
+            tbody.appendChild(tr);
+        });
+        inventory.appendChild(tbody);
+    }
+
+
+
+
+    // Sort the table/items A-Z or Z-A
+    async function sortTable(direction, location) {
+        const response = await fetch(`/sortTable?direction=${direction}&location=${location}`);
+        const data = await response.json();
+        buildTable(data);
+    }
+
+    function sortNameBtnToggle() {
+        let direction = sortNameBtn.innerHTML;
+        let location = filterLocBtn.innerHTML;
+
+        if (direction == "Sort") {
+            sortTable("A", location);
+            sortNameBtn.innerHTML = "A-Z";
+        }
+        else if (direction == "A-Z") {
+            sortTable("D", location);
+            sortNameBtn.innerHTML = "Z-A";
+        }
+        else if (direction == "Z-A") {
+            sortTable("A", location);
+            sortNameBtn.innerHTML = "A-Z";
+        }
+    }
+
+
+
+
+    // Filters the item in the table based on location you specify on btn press
+    async function filterTable(location) {
+        const response = await fetch(`/filterTable?location=${location}`);
+        const data = await response.json();
+        buildTable(data);
+    }
+
+    function filterLocBtnToggle() {
+        let location = filterLocBtn.innerHTML;
+
+        // Reset the A-Z/Z-A btn each time we change location for easier logic
+        sortNameBtn.innerHTML = "Sort";
+
+        if (location == "Location") {
+            filterTable("RIC");
+            filterLocBtn.innerHTML = "RIC";
+        }
+        else if (location == "RIC") {
+            filterTable("OTA");
+            filterLocBtn.innerHTML = "OTA";
+        }
+        else if (location == "OTA") {
+            filterTable("MCC");
+            filterLocBtn.innerHTML = "MCC";
+        }
+        else if (location == "MCC") {
+            filterTable("Location");
+            filterLocBtn.innerHTML = "Location";
+        }
+    }
+
+
+
+
+    async function getTableLastSeen(location) {
+        const response = await fetch(`/getTableLastSeen?location=${location}`);
+        const data = await response.json();
+        buildTable(data);
+    }
+    
+    // This toggles the lastSeen btn which inserts a column onto the inventory table showing
+    // the date of the last time that object was scanned
+    function lastSeenBtnToggle() {
+        // Either "selected" or "unselected"
+        let state = lastSeenBtn.value;
+        let location = filterLocBtn.innerHTML;
+
+        if (state == "unselected") {
+            lastSeenBtn.classList.toggle("seen-active");
+            lastSeenBtn.value = "selected";
+            lastSeenToggle = true;
+
+            // Turn off the "Maintenance" button to free up the column, acts like a radio btn
+            maintToggle = false;
+            maintBtn.value = "unselected";
+            maintBtn.classList.remove("seen-active");
+
+            getTableLastSeen(location);
+        }
+        else if (state == "selected") {
+            lastSeenBtn.classList.toggle("seen-active");
+            lastSeenBtn.value = "unselected";
+            lastSeenToggle = false;
+            filterTable(location);      // Load in the regular inventory without the extra column
+        }
+    }
+
+
+
+
+    // Same logic/design as lastSeenBtnToggle() 
+    async function getTableMaintenance(location) {
+        const response = await fetch(`/getTableMaintenance?location=${location}`);
+        const data = await response.json();
+        buildTable(data);
+    }
+
+    function maintBtnToggle() {
+        // Either "selected" or "unselected"
+        let state = maintBtn.value;
+        let location = filterLocBtn.innerHTML;
+
+        if (state == "unselected") {
+            maintBtn.classList.toggle("seen-active");
+            maintBtn.value = "selected";
+            maintToggle = true;
+
+            // Turn off the "Last Seen" button to free up the column, acts like a radio btn
+            lastSeenToggle = false;
+            lastSeenBtn.value = "unselected";
+            lastSeenBtn.classList.remove("seen-active");
+
+            getTableMaintenance(location);
+        }
+        else if (state == "selected") {
+            maintBtn.classList.toggle("seen-active");
+            maintBtn.value = "unselected";
+            maintToggle = false;
+            filterTable(location);
+        }
+    }
+
+
+
+
+    // Scanning/inventorying functionality
+    async function markPresent(value) {
+        const response = await fetch(`/markPresent?value=${value}`, {
+            headers: {'Accept': 'application/json'},
+            cache: 'no-store'
+        });
+        const data = await response.json();
+        buildTable(data);
+    }
+
+    // Remember, when the scanner scans something, it acts like a keyboard typing in letters
+    // super fast. So, we pick up that input here
+    scannerInput.addEventListener('keydown', async (event) => {
+        // When the scanner is done scanning, it clicks enter
+        if (event.key === "Enter") {
+            // Mark that the item has been inventoried in the backend csv
+            const value = scannerInput.value.trim();
+            await markPresent(value);
+
+            // To show a successful scan/item grab, we change the btn class to flash, wait, then reset the style
+            scannerBtn.classList.add('flashSuccess');
+            setTimeout(() => scannerBtn.classList.remove('flashSuccess'), 200);
+
+            // Clear the scanner input
+            scannerInput.value = "";
+        }
+    });
+
+
+    // Resets the inventoried column to all "FALSE" values
+    async function resetInvCol() {
+        const response = await fetch(`/resetInvCol`);
+        const data = await response.json();
+
+        // Reset out options buttons
+        filterLocBtn.innerHTML = "Location";
+        sortNameBtn.innerHTML = "Sort";
+
+        buildTable(data);
+    }
+
+
+
+
+    // Helper function to bring focus back to the scannerinput
+    function focusScanner() {
+        if (document.activeElement !== scannerInput) {
+            scannerInput.focus();
+        }
+    }
+
+    // Events to fire helper
+    window.addEventListener("load", focusScanner);      // When the page loads
+    window.addEventListener("focus", focusScanner);     // When you come back to the page
+    document.addEventListener("mousedown", (e) => {      // Mouse click
+        // This makes sure we can interact with say a button and not get interrupted
+        if (e.target.closest('button')) {
+            return;
+        }
+
+        setTimeout(focusScanner, 0);
+    });
+
+    // Reset focus after we click on something on screen
+    document.addEventListener("click", () => {
+        setTimeout(focusScanner, 0);
+    });
+
+    // This is for touch screens, resets the focus to the scanner input after you tap
+    document.addEventListener('touchstart', (e) => {
+        if (!e.target.closest('button, a, input, label, select, textarea, [role="button"]')) {
+            setTimeout(focusScanner, 0);
+            }
+    });
+
+
+
+
+    // PDF generation
+    async function generatePDF() {
+        // This is where code should fire
+    }
+
+
+
+
+    // Build the table once window loads
+    window.addEventListener("DOMContentLoaded", getTableData)
+</script>

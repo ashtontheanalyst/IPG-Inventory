@@ -110,56 +110,55 @@ body{
     margin-right: 5px;
     border: none;
     border-radius: 5px;
-    background-color: white;
-    color: black;
     font-weight: bold;
     box-shadow: 0px 0px 5px hsl(0, 0%, 90%);
+
+    /*Default bg color, used for toggle conditional btn*/
+    background-color: #dedede;
 }
 
-.locBtn{
-    padding: 15px 20px;
-    font-size: 1.25em;
-    cursor: pointer;
-    margin-left: 5px;
-    margin-right: 5px;
-    border: none;
-    border-radius: 5px;
+#filterLocBtn{
     background-color: #e2e2fb;
     color: black;
-    font-weight: bold;
-    box-shadow: 0px 0px 5px hsl(0, 0%, 90%);
 }
 
-.locBtn:hover{
+#filterLocBtn:hover{
     background-color: #bcbbf6;
     transition: 0.1s;
 }
 
-.locBtn:active{
+#filterLocBtn:active{
     background-color: #1d1c53;
     color: white;
     transition: 0.1s;
 }
 
-/*Changes the background of the location btn/radio selected*/
-.locBtn:has(input:checked) {
-    background-color: #1d1c53;
-    color: white;
-}
 
-#sortLocAZbtn, #sortLocZAbtn{
+#sortNameBtn{
     background-color: #bad8f5;
 }
 
-#sortLocAZbtn:hover, #sortLocZAbtn:hover{
+#sortNameBtn:hover{
     background-color: #86c0f6;
     transition: 0.1s;
 }
 
-#sortLocAZbtn:active, #sortLocZAbtn:active{
+#sortNameBtn:active{
     background-color: #0b2f51;
     color: white;
     transition: 0.1s;
+}
+
+
+/*This is a custom toggle, when the button is selected it will go to this*/
+#lastSeenBtn.seen-active{
+    background-color: rgb(183, 241, 183);
+    color: rgb(27, 57, 27);
+}
+
+#maintBtn.seen-active{
+    background-color: rgb(183, 241, 183);
+    color: rgb(27, 57, 27);
 }
 
 
