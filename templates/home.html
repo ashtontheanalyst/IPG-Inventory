@@ -345,7 +345,19 @@
 
     // PDF generation
     async function generatePDF() {
-        // This is where code should fire
+        // Grab the PDF
+        const response = await fetch(`/get2062`);
+        const blob = await response.blob();
+
+        // Download to the client
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `Generated2062.docx`;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        window.URL.revokeObjectURL(url);
     }
 
 

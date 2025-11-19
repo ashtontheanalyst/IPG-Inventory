@@ -74,6 +74,17 @@ all of them instead of the current location the user had truly selected.
 **11/18/25**
 - Tried bringing in the 2062 generator but was not compatible with the pre-exisiting code/system,
 need to figure out how to fix that and get it operational
+- Pulled most recent code from main branch into the python anywhere, no bugs/issues in terms of 
+functionality as of now
+- Found a docx version of the 2062 so I have a pretty easy generator that runs right now, need to
+get the actual formatting and details correct but it works!
+
+**11/19/25**
+- Completed the docx version of the 2062 generator that will create a header page and dynamic
+pages as the item amount grows.
+- Need to make the 2062 where items of the same name get put in one row instead of multiple,
+then the serial numbers get listed in desc. and item quant reflects the amount of duplicates
+- Instead of downloading a docx in the browser, it'd be nice if it was an adobe editable PDF
 
 ## Ideas
 1. **[DONE]** Convert Ethan's Ruby on Rails application to a Python Flask application

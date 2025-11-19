@@ -3,6 +3,7 @@ import pandas as pd
 import csv
 from pathlib import Path
 import time
+from gen2062 import *
 
 
 # Init app
@@ -11,6 +12,10 @@ app = Flask(__name__)
 # Entire inventory CSV df
 BASE_DIR = Path(__file__).resolve().parent
 DATA_CSV = BASE_DIR / "data" / "Inventory.csv"
+
+# 2062 Template and Dir
+TEMPLATE_PATH = BASE_DIR / "docs" / "base2062.docx"
+OUTPUT_DIR = BASE_DIR / "docs" / "filled"
 
 
 
@@ -142,6 +147,8 @@ def markPresent():
     return jsonify({"status": "ok", "items": inventory})
 
 
+
+
 # Resets the inventory column to all false values in the CSV
 @app.route("/resetInvCol")
 def resetInvCol():
@@ -165,6 +172,7 @@ def resetInvCol():
 @app.route("/info")
 def info():
     return render_template("info.html")
+
 
 # Backend API for getting that info off the CSV, then sending to the frontend
 @app.route("/getItemInfo")
@@ -191,10 +199,18 @@ def getItemInfo():
 
 
 
-# Generating the PDF
-@app.route("/generatepdf")
-def generate_pdf_route():
-    return "hello"
+# Sending the PDF once generated
+@app.route("/get2062")
+def get2062():
+    # Let the gen2062.py file handle all the docx creation, then send it to the frontend for download
+    path = generate2062docx()
+
+    return send_file(
+        path,
+        as_attachment=True,
+        download_name=f"Generated2062.docx",
+        mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    )
 
 
 
