@@ -4,7 +4,6 @@ from copy import deepcopy
 import pandas as pd
 from math import floor
 import time
-from docx2pdf import convert
 
 
 # Directory help/paths
@@ -26,7 +25,7 @@ def generate2062docx():
 
     # Defaults/States
     f2062startRowInd = 4
-    f2062RowMax = 19
+    f2062RowMax = 23
     rowF = f2062startRowInd
     rowC = 0
     CONT_DOC = None              # This is where a cont doc will be held if items exceed the amount of first page
@@ -59,21 +58,71 @@ def generate2062docx():
         print(amountPages)
 
     
+    # This is the name from i-1, this is compared to the current i value to see if we can + the quant or make a new row
+    nameMin1 = ""
+
+    
     # Editing doc(s)
     for i in range(len(items)):
         # Values, pulled from the items df that was narrowed down
         name = items.iloc[i]["category_name"]
         serial = items.iloc[i]["serial_number"]
 
+        # If the name of the current item matches the last item
+        if name == nameMin1:
+            # Ensure at least one row exists
+            if rowF < f2062RowMax:
+                # First Page
+                if rowF <= f2062RowMax:
+                    rowFmin1 = rowF - 1
+                    serialCell = first2062.cell(rowFmin1, 2)
+                    qtyCell = first2062.cell(rowFmin1, 10)
+                    
+                    # Append the serial #
+                    if serialCell.text.strip():
+                        serialCell.text = serialCell.text + f", {serial}"
+                    else:
+                        serialCell.text = serial
+
+                    # Inc quantity
+                    currQty = qtyCell.text.strip()
+                    currQty = int(currQty) if currQty else 0
+                    qtyCell.text = str(currQty + 1)
+
+                    # IMPORTANT, this moves us to the next instead of making a new row
+                    continue
+            
+            # Continuation page(s), same logic as above
+            if CONT_DOC is not None and rowC > 0:
+                rowCmin1 = rowC - 1
+                serialCell = cont2062.cell(rowCmin1, 2)
+                qtyCell = cont2062.cell(rowCmin1, 10)
+
+                if serialCell.text.strip():
+                    serialCell.text = serialCell.text + f", {serial}"
+                else:
+                    serialCell.text = serial
+
+                currQty = qtyCell.text.strip()
+                currQty = int(currQty) if currQty else 0
+                qtyCell.text = str(currQty + 1)
+
+                continue
+        
+        # Inc name
+        nameMin1 = name
+
+
+        # This is for if we don't have a match, make a new row
         # Page 1
-        if i < f2062RowMax:
+        if rowF < f2062RowMax:
             # Edit the specific cell(row, col) text with narrowed down df values
             first2062.cell(rowF, 0).text = name
             first2062.cell(rowF, 2).text = serial
             first2062.cell(rowF, 10).text = "1"
             rowF += 1
 
-        # Continuation pages
+        # Continuation page(s)
         else:
             # Make the cont doc and fill it to the capacity, once filled then append it to main and clear
             # for the next iteration if necessary

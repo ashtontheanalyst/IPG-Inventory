@@ -84,7 +84,18 @@ get the actual formatting and details correct but it works!
 pages as the item amount grows.
 - Need to make the 2062 where items of the same name get put in one row instead of multiple,
 then the serial numbers get listed in desc. and item quant reflects the amount of duplicates
-- Instead of downloading a docx in the browser, it'd be nice if it was an adobe editable PDF
+- **NOTE:** We will not be doing docx to PDF convert because the module that runs it requires
+microsoft word and pythonanywhere does not have that, so they'll have to be happy with a word doc
+- Pythonanywhere is having issues with pulling from main, can't get the code to pull in and load
+
+**11/20/25**
+- Python anywhere has the correct code now, the issue was that it had local changes that it wanted
+me to merge but that was not the desired behavior. Therefore I ran this command to wipe local changes
+and pull purely what was on the github:
+```sh
+git reset --hard origin/main
+git clean -fd
+```
 
 ## Ideas
 1. **[DONE]** Convert Ethan's Ruby on Rails application to a Python Flask application
