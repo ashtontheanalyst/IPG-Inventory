@@ -17,7 +17,7 @@ OUTPUT_DIR = BASE_DIR / "docs" / "filled"
 
 
 # Helper function to generate the DOCx
-def generate2062docx():
+def generate2062docx(client):
     # DOC is the overall doc that will get sent to the front end, for now we append the first p of 2062
     DOC = Document(FIRST_2062)
     first2062 = DOC.tables[0]
@@ -44,7 +44,7 @@ def generate2062docx():
 
     # Editing the header of page 1 2062
     first2062.cell(0, 5).text = "FROM:\nBCDC - IPG"
-    first2062.cell(0, 12).text = f"TO:"
+    first2062.cell(0, 12).text = f"TO:\n{client}"
     first2062.cell(1, 10).text = f"DATE:\n{time.localtime().tm_mon}/{time.localtime().tm_mday}/{time.localtime().tm_year}"
     first2062.cell(1, 15).text = f"QUANTITY:\n{len(items)}"
 

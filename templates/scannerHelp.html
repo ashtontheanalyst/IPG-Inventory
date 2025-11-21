@@ -7,24 +7,39 @@
     <link rel="stylesheet" href="../static/index.css"><!--CSS-->
 </head>
 <body>
-    <h1>Help with Using the Scanner</h1>
-    <a href="/">Home</a>
+    <!--Header-->
+    <div id="headerBar">
+        <a href="/" style="text-decoration: none;"><h1>IPG Inventory</h1></a>
 
-    <h3>Reset to Factory Settings</h3>
-    <img src="../static/scanner/factory-reset.jpeg" style="border: 1px solid black;">
+        <div id="headerBtnCont">
+            <a href="/scannerHelp" class="headerBtn" id="scannerBtn" title="Help">
+                <img src="../static/assets/help.svg" alt="Help" style="width: 37px;">
+            </a>
+            <a href="/info" class="headerBtn" id="infoBtn" title="Get Item Information">
+                <img src="../static/assets/info.svg" alt="Info" style="width: 32px;">
+            </a>
+        </div>
+    </div>
 
-    <h3>Set Scanner to Bluetooth</h3>
-    <img src="../static/scanner/scanner-bluetooth.jpeg" style="border: 1px solid black;">
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <h1>Help with Using the Scanner</h1>
 
-    <h3>Set Scanner to USB Dongle</h3>
-    <img src="../static/scanner/scanner-usb.jpeg" style="border: 1px solid black;">
+        <h3>Reset to Factory Settings</h3>
+        <img src="../static/scanner/factory-reset.jpeg" style="border: 1px solid black;">
 
-    <h3>Beep Options</h3>
-    <img src="../static/scanner/beep-off.jpeg" style="border: 1px solid black;">
-    <img src="../static/scanner/beep-low.jpeg" style="border: 1px solid black;">
+        <h3>Set Scanner to Bluetooth</h3>
+        <img src="../static/scanner/scanner-bluetooth.jpeg" style="border: 1px solid black;">
 
-    <h3>Sleep Options</h3>
-    <img src="../static/scanner/sleep-3min.jpeg" style="border: 1px solid black;">
-    <img src="../static/scanner/sleep-30s.jpeg" style="border: 1px solid black;">
+        <h3>Set Scanner to USB Dongle</h3>
+        <img src="../static/scanner/scanner-usb.jpeg" style="border: 1px solid black;">
+
+        <h3>Beep Options</h3>
+        <img src="../static/scanner/beep-off.jpeg" style="border: 1px solid black;">
+        <img src="../static/scanner/beep-low.jpeg" style="border: 1px solid black;">
+
+        <h3>Sleep Options</h3>
+        <img src="../static/scanner/sleep-3min.jpeg" style="border: 1px solid black;">
+        <img src="../static/scanner/sleep-30s.jpeg" style="border: 1px solid black;">
+    </div>
 </body>
 </html>

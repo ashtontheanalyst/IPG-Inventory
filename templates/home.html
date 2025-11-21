@@ -12,11 +12,18 @@
         <a href="/" style="text-decoration: none;"><h1>IPG Inventory</h1></a>
 
         <div id="headerBtnCont">
-            <button id="ResetInvBtn" type="button" onclick="resetInvCol()" class="headerBtn">Reset</button>
-            <button id="generatePDFBtn" type="button" class="headerBtn" onclick="generatePDF()">2062</button>
-            <a href="/scannerHelp" class="headerBtn" id="scannerBtn">Scanner</a>
-            <a href="/info" class="headerBtn" id="infoBtn">Info</a>
-            <!--More buttons here-->
+            <button id="ResetInvBtn" type="button" onclick="resetInvCol()" class="headerBtn" title="Reset Page">
+                <img src="../static/assets/reset.svg" alt="Reset" style="width: 35px;">
+            </button>
+            <button id="generate2062Btn" type="button" class="headerBtn" onclick="generate2062()" title="Generate 2062HR">
+                <img src="../static/assets/document.svg" alt="2062" style="width: 40px;">
+            </button>
+            <a href="/scannerHelp" class="headerBtn" id="scannerBtn" title="Help">
+                <img src="../static/assets/help.svg" alt="Help" style="width: 37px;">
+            </a>
+            <a href="/info" class="headerBtn" id="infoBtn" title="Get Item Information">
+                <img src="../static/assets/info.svg" alt="Info" style="width: 32px;">
+            </a>
         </div>
     </div>
 
@@ -32,6 +39,7 @@
             <!--This button adds the last seen column to the table (toggelable)-->
             <button id="lastSeenBtn" type="button" class="optBtn" value="unselected" onclick="lastSeenBtnToggle()">Seen</button>
             <button id="maintBtn" type="button" class="optBtn" value="unselected" onclick="maintBtnToggle()">Maint</button>
+            <button id="holderBtn" type="button" class="optBtn" value="unselected" onclick="holderBtnToggle()">Holder</button>
         </div>
 
 
@@ -58,8 +66,10 @@
     const lastSeenBtn = document.getElementById("lastSeenBtn");
     let lastSeenToggle = false;       // This toggles on or off to determine if it's shown on the table
     const maintBtn = document.getElementById("maintBtn");
-    let maintToggle = false;    // Same idea as above but shows maintenance date
-    const generatePDFBtn = document.getElementById("generatePDFBtn");
+    let maintToggle = false;          // Same idea as above but shows maintenance date
+    const holderBtn = document.getElementById("holderBtn");
+    let holderToggle = false; 
+    const generate2062Btn = document.getElementById("generate2062Btn");
     sortNameBtn.innerHTML = "Sort";
     filterLocBtn.innerHTML = "Location";
 
@@ -83,7 +93,7 @@
         // Headers
         const thead = document.createElement("thead");
         const hr = document.createElement("tr");
-        let headers = ["Item", "S/N", "LOC", "INV"];    // Base
+        let headers = ["Item", "S/N", "LOC", "S"];    // Base
 
         // Extras if selected
         if (lastSeenToggle) {
@@ -91,6 +101,9 @@
         }
         if (maintToggle) {
             headers.push("Maint Due");
+        }
+        if (holderToggle) {
+            headers.push("Holder");
         }
         
         headers.forEach((val) => {
@@ -117,6 +130,11 @@
                 tr.insertCell(4).textContent = item.maintenance;
             } else if (lastSeenToggle) {
                 tr.insertCell(4).textContent = item.lastSeen;
+            } else if (holderToggle) {
+                const td = tr.insertCell(4);
+                td.textContent = item.holder;
+                // Each holder cell in this column gets CSS so it'll light up/be selectable for later use
+                td.classList.add("holder-cell");
             }
 
             // This highlights the items that are inventoried, lights up the row
@@ -134,7 +152,7 @@
 
     // Sort the table/items A-Z or Z-A
     async function sortTable(direction, location) {
-        const response = await fetch(`/sortTable?direction=${direction}&location=${location}`);
+        const response = await fetch(`/sortTable?direction=${direction}&location=${location}&seen=${lastSeenToggle}&maint=${maintToggle}`);
         const data = await response.json();
         buildTable(data);
     }
@@ -162,7 +180,7 @@
 
     // Filters the item in the table based on location you specify on btn press
     async function filterTable(location) {
-        const response = await fetch(`/filterTable?location=${location}`);
+        const response = await fetch(`/filterTable?location=${location}&seen=${lastSeenToggle}&maint=${maintToggle}`);
         const data = await response.json();
         buildTable(data);
     }
@@ -212,10 +230,14 @@
             lastSeenBtn.value = "selected";
             lastSeenToggle = true;
 
-            // Turn off the "Maintenance" button to free up the column, acts like a radio btn
+            // Turn off other btns
             maintToggle = false;
             maintBtn.value = "unselected";
             maintBtn.classList.remove("seen-active");
+
+            holderToggle = false;
+            holderBtn.value = "unselected";
+            holderBtn.classList.remove("seen-active");
 
             getTableLastSeen(location);
         }
@@ -247,10 +269,14 @@
             maintBtn.value = "selected";
             maintToggle = true;
 
-            // Turn off the "Last Seen" button to free up the column, acts like a radio btn
+            // Turn off other btns
             lastSeenToggle = false;
             lastSeenBtn.value = "unselected";
             lastSeenBtn.classList.remove("seen-active");
+
+            holderToggle = false;
+            holderBtn.value = "unselected";
+            holderBtn.classList.remove("seen-active");
 
             getTableMaintenance(location);
         }
@@ -265,9 +291,71 @@
 
 
 
+    // This column will show who the last holder of the item was
+    async function getTableHolder(location) {
+        const response = await fetch(`/getTableHolder?location=${location}`);
+        const data = await response.json();
+        buildTable(data);
+    }
+
+    function holderBtnToggle() {
+        // Either "selected" or "unselected"
+        let state = holderBtn.value;
+        let location = filterLocBtn.innerHTML;
+
+        if (state == "unselected") {
+            holderBtn.classList.toggle("seen-active");
+            holderBtn.value = "selected";
+            holderToggle = true;
+
+            // Turn off the "Last Seen" button to free up the column, acts like a radio btn
+            lastSeenToggle = false;
+            lastSeenBtn.value = "unselected";
+            lastSeenBtn.classList.remove("seen-active");
+
+            maintToggle = false;
+            maintBtn.value = "unselected";
+            maintBtn.classList.remove("seen-active");
+
+            getTableHolder(location);
+        }
+        else if (state == "selected") {
+            holderBtn.classList.toggle("seen-active");
+            holderBtn.value = "unselected";
+            holderToggle = false;
+            filterTable(location);
+        }
+    }
+
+
+    // This is fired off when we click on a highlighted cell of the holder column, it allows
+    // the user to edit the name/entity of who had the item last
+    document.addEventListener("click", (cell) => {
+        if (cell.target.classList.contains("holder-cell")) {
+            // This grabs the item name and serial of the row that was selected
+            item = cell.target.parentElement.cells[0].textContent;
+            serial = cell.target.parentElement.cells[1].textContent;
+
+            // Prompt the user to enter a name of who the new item holder is
+            name = window.prompt(`Enter the last holder of:\nItem: ${item}\nSerial: ${serial}`);
+            
+            // Update the sheet, we take in blank input because that would be the same as "deleting"
+            changeHolder(name, item, serial);
+        }
+    });
+
+    async function changeHolder(name, item, serial) {
+        const response = await fetch(`/changeHolder?name=${name}&item=${item}&serial=${serial}&location=${filterLocBtn.innerHTML}&seen=${lastSeenToggle}&maint=${maintToggle}`);
+        const data = await response.json();
+        buildTable(data);
+    }
+
+
+
+
     // Scanning/inventorying functionality
-    async function markPresent(value) {
-        const response = await fetch(`/markPresent?value=${value}`, {
+    async function markPresent(value, location) {
+        const response = await fetch(`/markPresent?value=${value}&location=${location}&seen=${lastSeenToggle}&maint=${maintToggle}`, {
             headers: {'Accept': 'application/json'},
             cache: 'no-store'
         });
@@ -278,11 +366,13 @@
     // Remember, when the scanner scans something, it acts like a keyboard typing in letters
     // super fast. So, we pick up that input here
     scannerInput.addEventListener('keydown', async (event) => {
+        let location = filterLocBtn.innerHTML;
+
         // When the scanner is done scanning, it clicks enter
         if (event.key === "Enter") {
             // Mark that the item has been inventoried in the backend csv
             const value = scannerInput.value.trim();
-            await markPresent(value);
+            await markPresent(value, location);
 
             // To show a successful scan/item grab, we change the btn class to flash, wait, then reset the style
             scannerBtn.classList.add('flashSuccess');
@@ -293,15 +383,28 @@
         }
     });
 
+    
+
 
     // Resets the inventoried column to all "FALSE" values
     async function resetInvCol() {
         const response = await fetch(`/resetInvCol`);
         const data = await response.json();
 
-        // Reset out options buttons
+        // Reset out filter/sort btns
         filterLocBtn.innerHTML = "Location";
         sortNameBtn.innerHTML = "Sort";
+
+        // Reset optns btns
+        lastSeenToggle = false;
+        lastSeenBtn.value = "unselected";
+        lastSeenBtn.classList.remove("seen-active");
+        maintToggle = false;
+        maintBtn.value = "unselected";
+        maintBtn.classList.remove("seen-active");
+        holderToggle = false;
+        holderBtn.value = "unselected";
+        holderBtn.classList.remove("seen-active");
 
         buildTable(data);
     }
@@ -343,10 +446,19 @@
 
 
 
-    // PDF generation
-    async function generatePDF() {
-        // Grab the PDF
-        const response = await fetch(`/get2062`);
+    // 2062 generation
+    async function generate2062() {
+        // First prompt the user to enter who the 2062 is for (client)
+        const client = window.prompt("Who is this 2062 being given to (client/entity name):");
+
+        // If the input is junk or blank then don't make a 2062
+        if (!client || !client.trim()) {
+            window.alert("You must specify who the 2062 is for.");
+            return;
+        }
+
+        // Grab the 2062 Docx
+        const response = await fetch(`/get2062?client=${client}`);
         const blob = await response.blob();
 
         // Download to the client

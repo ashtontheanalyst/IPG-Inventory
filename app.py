@@ -37,7 +37,7 @@ def scannerHelp():
 
 
 # Helper function for pulling from the CSV
-def pullDataCSV(location=None, lastSeen=False, maint=False):
+def pullDataCSV(location=None, lastSeen=False, maint=False, holder=False):
     items = []
 
     # Opens the CSV file with inventory data, goes row by row pulling out each
@@ -62,6 +62,9 @@ def pullDataCSV(location=None, lastSeen=False, maint=False):
             
             if maint:
                 item["maintenance"] = row.get("maintenance")
+
+            if holder:
+                item["holder"] = row.get("holder")
 
             # append each item to the items list
             items.append(item)
@@ -92,17 +95,27 @@ def getTableMaintenance():
     return jsonify({"status": "ok", "items": inventory})
 
 
+@app.route("/getTableHolder")
+def getTableHolder():
+    location = request.args.get("location")
+    inventory = pullDataCSV(location=location, holder=True)
+
+    return jsonify({"status": "ok", "items": inventory})
+
+
 # Sort the table based on A-Z or Z-A
 @app.route("/sortTable")
 def sortTable():
     direction = request.args.get("direction")   # Get direction A:ascending or D:decending
     location = request.args.get("location")     # Pull the location for sorting
+    maint = request.args.get("maint")
+    seen = request.args.get("seen")
 
     # Use our helper function to pull inventory
     if location == "Location":
-        inventory = pullDataCSV()
+        inventory = pullDataCSV(lastSeen=seen, maint=maint)
     else:
-        inventory = pullDataCSV(location=location)
+        inventory = pullDataCSV(location=location, lastSeen=seen, maint=maint)
 
     # Sort the inv based on asc/desc
     if direction == "A":
@@ -117,11 +130,13 @@ def sortTable():
 @app.route("/filterTable")
 def filterTable():
     location = request.args.get("location")
+    maint = request.args.get("maint")
+    seen = request.args.get("seen")
 
     if location == "Location":
-        inventory = pullDataCSV()
+        inventory = pullDataCSV(lastSeen=seen, maint=maint)
     else:
-        inventory = pullDataCSV(location=location)
+        inventory = pullDataCSV(location=location, lastSeen=seen, maint=maint)
 
 
     return jsonify({"status": "ok", "items": inventory})
@@ -133,6 +148,10 @@ def filterTable():
 @app.route("/markPresent")
 def markPresent():
     value = request.args.get("value")
+    location = request.args.get("location")
+    seen = request.args.get("seen")
+    maint = request.args.get("maint")
+    
     currentTimeFormatted = f"{time.localtime().tm_mon}/{time.localtime().tm_mday}/{time.localtime().tm_year}"
 
     # Make the CSV a pandas df, update the value that's been scanned in, write it to the CSV
@@ -142,7 +161,34 @@ def markPresent():
     df.to_csv(DATA_CSV, index=False)
 
     # Read the newly updated CSV data to be passed to the frontend
-    inventory = pullDataCSV(lastSeen=True)
+    if location == "Location" or location is None:
+        inventory = pullDataCSV(lastSeen=seen, maint=maint)
+    else:
+        inventory = pullDataCSV(location=location, lastSeen=seen, maint=maint)
+
+    return jsonify({"status": "ok", "items": inventory})
+
+
+
+
+# Changes the holder of an item based on what's passed in from the frontend
+@app.route("/changeHolder")
+def changeHolder():
+    name = request.args.get("name")
+    item = request.args.get("item")
+    serial = request.args.get("serial")
+    location = request.args.get("location")
+    seen = request.args.get("seen")
+    maint = request.args.get("maint")
+
+    df = pd.read_csv(DATA_CSV, dtype=str)
+    df.loc[(df["category_name"] == item) & (df["serial_number"] == serial), "holder"] = name
+    df.to_csv(DATA_CSV, index=False)
+
+    if location == "Location" or location is None:
+        inventory = pullDataCSV(lastSeen=seen, maint=maint, holder=True)
+    else:
+        inventory = pullDataCSV(location=location, lastSeen=seen, maint=maint, holder=True)
 
     return jsonify({"status": "ok", "items": inventory})
 
@@ -161,7 +207,7 @@ def resetInvCol():
 
     # Read the newly updated CSV data to be passed to the frontend, we put the params to true
     # just in case the user has those columns open, we don't want data just disappearing
-    inventory = pullDataCSV(lastSeen=True, maint=True)
+    inventory = pullDataCSV()
 
     return jsonify({"status": "ok", "items": inventory})
 
@@ -203,7 +249,8 @@ def getItemInfo():
 @app.route("/get2062")
 def get2062():
     # Let the gen2062.py file handle all the docx creation, then send it to the frontend for download
-    path = generate2062docx()
+    client = request.args.get("client")
+    path = generate2062docx(client=client)
 
     return send_file(
         path,

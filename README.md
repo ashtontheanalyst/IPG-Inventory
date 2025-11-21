@@ -3,20 +3,61 @@ This inventory system is to be used by members of the Bush Combat Development Co
 more specifically the Innovation Proving Ground team.
 
 
-## Capabilities
+## Capabilities by NOV21
 1. **[DONE]** Compare the inventory that is scanned in versus a master list of all items. From there
 the application should show the end user what item(s) are missing and at what location.
 2. **[DONE]** Rm.342 is priority for scanning items in/out, then we can expand to the OTA, OTA shed,
 MCC, and MCC shed, etc.
 3. Lofty goal is to have a notification system (most likely an email bot) that informs 
 certain users when an item needs to be maintained, updated, patched, or etc.
-4. Ethan created an Army HR 2062 generator which would build out a HR when you scanned
+4. **[DONE]** Ethan created an Army HR 2062 generator which would build out a HR when you scanned
 in items. The HR could then be printed out and used for range clients. This needs to
 be spruced up; mainly, the HR shouldn't list every line item one by one, but instead 
 utilize the item amount category to save line space.
 
 
-## Progress
+## Capabilities by DEC 15
+1. **[DONE]** Admin rights in order to edit the CSV file with data (python anywhere), create an SOP on how
+to do that
+2. _(IN-PROG: M Baker)_ Updating the CSV file to include all items with QR codes and that are read into the system
+3. "Maintenance" tab that shows the next effective date, highlights the row when it's past
+due, then is able to be clicked on so that you can choose 'yes' or 'no' if maint was done, then
+it'll update the next effective maintenance date. Turns yellow if you're 30 days out. Maybe if 
+you click it as well it'll give you more details on what exctly it's talking about
+4. Separate column to track who is the current holder of the object (this also needs to be
+clickable to reset it)
+5. Update the Info page to have more data on it like the effective maintenance date, who has the
+item checked out to them, etc..
+5. More filtering buttons/functionality in order to hndle the incrased features (QoS)
+6. SOPs on how to do a lot of these tasks i.e. logging into python anywhere, pulling down/editing the CSV
+master list, connecting the scanner to your phone, changing scanner settings, adding objects with stickers/codes
+and etc, etc...
+
+
+## Ideas
+1. **[DONE]** Convert Ethan's Ruby on Rails application to a Python Flask application
+2. **[DONE]** Fix the hosting problem by hosting the Flask application on pythonanywhere with a 
+username/password
+3. The main inventory page can save a temp csv with all of the items that have been scanned
+so that we can have a button that says 'Build 2062' and then it builds it with the saved list
+4. **[DONE]** Set the scanner to bluetooth mode, and make a separate page with the barcodes for configuring
+the scanner/how to use it (help page)
+5. _(IN-PROG)_ Log for when maintenance was completed
+6. _(IN-PROG)_ Add a column with the maintenance date or window and then the cell per item can be clicked
+to check off that mainentnance has been done (this is what would be logged), color code it
+7. **[DONE]** Maybe another column that is like a "last seen" column, it checks to see when the item was
+last scanned in, this is the true inventory
+8. **[DONE]** Change the location and A-Z/Z-A buttons to be positional buttons to clear up the screen,
+as you click them their value changes through a series
+9. When you click 2062, a pop-up comes up and asks for a name or company so that it will put it on the
+2062 as who the items are being checked out to
+10. Idea 9 plays into this but a column with tracking who was the last person to scan out the item or
+who is the current item holder. That cell should be clickable and when you click it you get the option
+to enter the name of the new holder or reset it to basically say no one is holding it right now.
+11. Maybe a help button to explain the different buttons or functionality of the site
+
+
+## Progress Log
 **11/7/25:**
 - Ashton (lead), Avery, Brian, and Rosa (main client) fleshed out application capabilities 
 as seen in the above section
@@ -96,19 +137,19 @@ and pull purely what was on the github:
 git reset --hard origin/main
 git clean -fd
 ```
+- 2062 generator is fully complete with all details and micro functions!
 
-## Ideas
-1. **[DONE]** Convert Ethan's Ruby on Rails application to a Python Flask application
-2. **[DONE]** Fix the hosting problem by hosting the Flask application on pythonanywhere with a 
-username/password
-3. The main inventory page can save a temp csv with all of the items that have been scanned
-so that we can have a button that says 'Build 2062' and then it builds it with the saved list
-4. **[DONE]** Set the scanner to bluetooth mode, and make a separate page with the barcodes for configuring
-the scanner/how to use it (help page)
-5. _(IN-PROG)_ Log for when maintenance was completed
-6. _(IN-PROG)_ Add a column with the maintenance date or window and then the cell per item can be clicked
-to check off that mainentnance has been done (this is what would be logged), color code it
-7. **[DONE]** Maybe another column that is like a "last seen" column, it checks to see when the item was
-last scanned in, this is the true inventory
-8. **[DONE]** Change the location and A-Z/Z-A buttons to be positional buttons to clear up the screen,
-as you click them their value changes through a series
+**11/21/25**
+- The pythonanywhere site now requires a u/p to sign in, the default is test/test. In order to edit
+the CSV file powering the pythonanywhere site you have to use my asmith@rellis.../password so it
+is now fully secure
+- BUG(FIXED): When the 'Seen' or 'Maint' is selected and you switch location or sort A-Z, the values in those
+columns disappear, that is not desired behavior
+- PROG: Michael Baker is working on finding the missing items, sticking with QR code, and inputting them
+into the secondary CSV which will get appended when he's done
+- Help and Info Pages look better, they have updated styling to match the home page
+- Headbtns replaced with images instead of text
+- 2062 gen btn now asks the user to specify who the document is for, then that person is listed as the recipient
+on the doc
+- Holder column was made, that tracks who the current holder of the object is. It can be manipulated if
+you click on the cell of the objects row
